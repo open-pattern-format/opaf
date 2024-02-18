@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<pattern xmlns:opaf="https://github.com/open-pattern-format/opaf/wiki" unique_id="0996e1be-b8ad-4093-ab19-c69b60fb1969" name="Test Pattern" >
+
+    <opaf:define_color name="main" value="black" />
+    <opaf:define_color name="secondary" value="#00FFFF" />
+
+    <opaf:include uri="file://metadata.opaf" />
+    <opaf:include uri="file://values.opaf" />
+    <opaf:include uri="file://blocks.opaf" />
+    <opaf:include uri="file://charts.opaf" />
+
+    <opaf:define_image name="icon" uri="file://icon.jpg" size="500" />
+    <opaf:define_image name="alpha_icon" uri="file://icon.png" size="500" />
+
+    <opaf:component name="Function Tests" >
+        <opaf:row type="rs" >
+            <opaf:block name="choose_function_test" repeat="4" />
+        </opaf:row>
+        <opaf:row type="ws" >
+            <opaf:block name="lchoose_function_test" repeat="12" />
+        </opaf:row>
+        <opaf:row type="rs">
+            <opaf:action name="knit" count="${round_test}" />
+            <opaf:action name="knit" count="${mround_test}" />
+            <opaf:action name="knit" count="${ROUND(mround_decimal_test)}" />
+            <opaf:action name="knit" count="${ceil_test}" />
+            <opaf:action name="knit" count="${ceil_multiple_test}" />
+            <opaf:action name="knit" count="${floor_test}" />
+            <opaf:action name="knit" count="${floor_multiple_test}" />
+        </opaf:row>
+    </opaf:component>
+
+    <opaf:component name="Action Tests" >
+        <opaf:row type="rs" >
+            <opaf:block name="instruction_action_test" />
+        </opaf:row>
+        <opaf:row type="rs" >
+            <opaf:block name="place_marker_action_test" />
+        </opaf:row>
+        <opaf:row type="rs" >
+            <opaf:block name="slip_marker_action_test" />
+        </opaf:row>
+        <opaf:row type="rs" >
+            <opaf:block name="to_marker_action_test" />
+        </opaf:row>
+        <opaf:row type="rs" >
+            <opaf:block name="to_end_action_test" />
+        </opaf:row>
+    </opaf:component>
+
+    <opaf:component name="Global Value Tests" >
+        <opaf:block name="test_opaf_prev_row_count" />
+        <opaf:block name="test_opaf_prev_row_offset" />
+        <opaf:block name="test_opaf_prev_row_count" repeat="5" />
+        <opaf:block name="test_opaf_prev_row_offset" repeat="5" />
+    </opaf:component>
+
+    <opaf:component name="Chart Tests" >
+        <opaf:block name="variable_chart_test" />
+        <opaf:block name="long_chart_test" />
+        <opaf:block name="small_chart_test" />
+        <opaf:block name="repeat_chart_test" />
+    </opaf:component>
+
+    <opaf:component name="Text Tests" >
+        <opaf:text data="# H1 Test" />
+        <opaf:text data="## H2 Test" />
+        <opaf:text data="## H3 Test" />
+        <opaf:text data="Normal text with some **bold** text and some *italic* text." />
+    </opaf:component>
+
+</pattern>

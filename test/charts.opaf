@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+
+<pattern xmlns:opaf="https://github.com/open-pattern-format/opaf/wiki">
+    <opaf:define_chart name="variable_chart">
+        <opaf:row type="RS">
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+        </opaf:row>
+        <opaf:row type="WS">
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+        </opaf:row>
+        <opaf:row type="RS">
+            <opaf:action name="none" />
+            <opaf:action name="purl" count="4" color="main" />
+            <opaf:action name="knit" count="4" color="main" />
+            <opaf:action name="none" />
+        </opaf:row>
+        <opaf:row type="WS">
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+        </opaf:row>
+        <opaf:row type="RS">
+            <opaf:action name="left_cable" count="3" />
+            <opaf:action name="knit" count="2" color="main" />
+            <opaf:action name="knit_front_back" />
+        </opaf:row>
+    </opaf:define_chart>
+
+    <opaf:define_chart name="long_chart">
+        <opaf:row type="RS">
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+        </opaf:row>
+        <opaf:row type="WS">
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+        </opaf:row>
+        <opaf:row type="RS">
+            <opaf:action name="none" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="none" count="5" color="main" />
+        </opaf:row>
+        <opaf:row type="WS">
+            <opaf:action name="none" count="10" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="none" count="10" color="main" />
+        </opaf:row>
+        <opaf:row type="RS">
+            <opaf:action name="none" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="none" count="5" color="main" />
+        </opaf:row>
+        <opaf:row type="WS">
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+        </opaf:row>
+        <opaf:row type="RS">
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+        </opaf:row>
+    </opaf:define_chart>
+
+    <opaf:define_chart name="small_chart">
+        <opaf:row type="RS">
+            <opaf:action name="knit" count="2" color="main" />
+            <opaf:action name="purl" count="2" color="main" />
+        </opaf:row>
+        <opaf:row type="WS">
+            <opaf:action name="none" count="1" color="main" />
+            <opaf:action name="left_cable" count="1" />
+            <opaf:action name="none" count="1" color="main" />
+        </opaf:row>
+        <opaf:row type="RS">
+            <opaf:action name="none" count="1" color="main" />
+            <opaf:action name="left_cable" count="1" />
+            <opaf:action name="none" count="1" color="main" />
+        </opaf:row>
+        <opaf:row type="WS">
+            <opaf:action name="knit" count="2" color="main" />
+            <opaf:action name="purl" count="2" color="main" />
+        </opaf:row>
+    </opaf:define_chart>
+</pattern>

@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+
+<pattern xmlns:opaf="https://github.com/open-pattern-format/opaf/wiki">
+
+    <opaf:define_block name="variable_chart_test" params="">
+        <opaf:chart name="variable_chart" />
+    </opaf:define_block>
+
+    <opaf:define_block name="long_chart_test" params="">
+        <opaf:chart name="long_chart" />
+    </opaf:define_block>
+
+    <opaf:define_block name="small_chart_test" params="">
+        <opaf:chart name="small_chart" />
+    </opaf:define_block>
+
+    <opaf:define_block name="repeat_chart_test" params="">
+        <opaf:row type="round" >
+            <opaf:chart name="small_chart" row="${LCHOOSE(repeat, [1,2,3,4])}" repeat="2" />
+        </opaf:row>
+    </opaf:define_block>
+
+    <opaf:define_block name="test_block_repeat_true" params="count">
+        <opaf:row type='round'>
+            <opaf:block name="knit_purl" count="${count}" />
+        </opaf:row>
+        <opaf:row type='WS' offset='${opaf_prev_row_count}'>
+            <opaf:block name="knit_purl" count="${count}" />
+        </opaf:row>
+    </opaf:define_block>
+
+    <opaf:define_block name="test_block_basic" params="count">
+        <opaf:row type='round'>
+            <opaf:action name="knit" count="${count}" color="secondary" />
+            <opaf:action name="place_marker" />
+        </opaf:row>
+        <opaf:row type='RS'>
+            <opaf:action name="purl" count="${count}" color="main" />
+            <opaf:action name="to_marker" offset="-1" />
+        </opaf:row>
+        <opaf:row type='WS'>
+            <opaf:action name="knit" count="${count}" color="secondary" />
+            <opaf:action name="to_marker" offset="0" />
+        </opaf:row>
+    </opaf:define_block>
+
+    <opaf:define_block name="knit_purl" params="count">
+        <opaf:action name="knit" count="${ROUND(count / 3)}" color="secondary" />
+        <opaf:action name="knit_together" />
+        <opaf:action name="purl" count="${CEIL(count + 2)}" />
+    </opaf:define_block>
+
+    <opaf:define_block name="choose_function_test" params="">
+        <opaf:action name="knit" count="${CHOOSE(repeat, [2,4,6,8])}" />
+    </opaf:define_block>
+
+    <opaf:define_block name="lchoose_function_test" params="">
+        <opaf:action name="knit" count="${LCHOOSE(repeat, [1,2,3,4])}" />
+    </opaf:define_block>
+
+    <opaf:define_block name="instruction_action_test" params="">
+        <opaf:action name="instruction" text="test" />
+        <opaf:action name="instruction" text="test" description="testing"/>
+    </opaf:define_block>
+
+    <opaf:define_block name="place_marker_action_test" params="">
+        <opaf:action name="place_marker" />
+        <opaf:action name="place_marker" bor="true" />
+    </opaf:define_block>
+
+    <opaf:define_block name="slip_marker_action_test" params="">
+        <opaf:action name="slip_marker" />
+        <opaf:action name="slip_marker" bor="true" />
+    </opaf:define_block>
+
+    <opaf:define_block name="to_marker_action_test" params="">
+        <opaf:action name="to_marker" offset="0"/>
+        <opaf:action name="to_marker" offset="0" bor="true" />
+        <opaf:action name="to_marker" offset="2" />
+        <opaf:action name="to_marker" offset="-2" />
+        <opaf:action name="to_marker" offset="2" bor="true" />
+    </opaf:define_block>
+
+    <opaf:define_block name="to_end_action_test" params="">
+        <opaf:action name="to_end" offset="0"/>
+        <opaf:action name="to_end" offset="2" />
+        <opaf:action name="to_end" offset="-2" />
+    </opaf:define_block>
+
+    <opaf:define_block name="test_opaf_prev_row_count" params="">
+        <opaf:row type='rs'>
+            <opaf:action name="knit" count="${10 * repeat}" />
+        </opaf:row>
+        <opaf:row type='ws'>
+            <opaf:action name="knit" count="${opaf_prev_row_count}" />
+        </opaf:row>
+    </opaf:define_block>
+
+    <opaf:define_block name="test_opaf_prev_row_offset" params="">
+        <opaf:row type='rs' offset="10">
+            <opaf:action name="knit" count="80" />
+        </opaf:row>
+        <opaf:row type='ws' offset="${opaf_prev_row_offset + repeat}" >
+            <opaf:action name="knit" count="${opaf_prev_row_offset + repeat}" />
+        </opaf:row>
+    </opaf:define_block>
+
+</pattern>
