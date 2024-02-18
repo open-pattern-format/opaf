@@ -5,6 +5,7 @@
     <opaf:define_color name="main" value="black" />
     <opaf:define_color name="secondary" value="#00FFFF" />
 
+    <opaf:include uri="file://../actions.opaf" />
     <opaf:include uri="file://metadata.opaf" />
     <opaf:include uri="file://values.opaf" />
     <opaf:include uri="file://blocks.opaf" />
