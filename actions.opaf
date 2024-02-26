@@ -105,6 +105,14 @@
         <action name="PU" description="pick up" instruction="PU ${count}" count="${count}" color="${color}" total="${count}" />
     </opaf:define_action>
 
+    <opaf:define_action name="pick_up_knit" params="count=1 color=main">
+        <action name="PUK" description="pick up and knit" instruction="pick up and k${count}" count="${count}" color="${color}" total="${count}" />
+    </opaf:define_action>
+
+    <opaf:define_action name="pick_up_purl" params="count=1 color=main">
+        <action name="PUP" description="pick up and purl" instruction="pick up and p${count}" count="${count}" color="${color}" total="${count}" />
+    </opaf:define_action>
+
     <opaf:define_action name="bind_off" params="count=1 color=main type=preferred">
         <action name="BO" description="bind off" instruction="BO ${count} using ${type} method" count="${count}" color="${color}" type="${type}" total="0" />
     </opaf:define_action>
