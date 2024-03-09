@@ -127,7 +127,7 @@
     <opaf:define_action name="make_one" params="color=main type=preferred">
         <action name="m1" description="make 1 knitwise" instruction="m1" type="${type}" count="1" color="${color}" total="1" condition="${type == 'preferred'}" />
         <action name="m1l" description="make 1 left knitwise" instruction="m1l" type="${type}" count="1" color="${color}" total="1" condition="${type == 'left'}" />
-        <action name="m1r" description="make 1 right knitwise" instruction="m1r" type="${type}" count="1" color="${color}" total="1" condition="${type == 'left'}" />
+        <action name="m1r" description="make 1 right knitwise" instruction="m1r" type="${type}" count="1" color="${color}" total="1" condition="${type == 'right'}" />
     </opaf:define_action>
 
     <!-- Make One Purl
@@ -140,7 +140,7 @@
     <opaf:define_action name="make_one_purl" params="color=main type=preferred">
         <action name="m1p" description="make 1 purlwise" instruction="m1p" type="${type}" count="1" color="${color}" total="1" condition="${type == 'preferred'}" />
         <action name="m1lp" description="make 1 left purlwise" instruction="m1lp" type="${type}" count="1" color="${color}" total="1" condition="${type == 'left'}" />
-        <action name="m1rp" description="make 1 right purlwise" instruction="m1rp" type="${type}" count="1" color="${color}" total="1" condition="${type == 'left'}" />
+        <action name="m1rp" description="make 1 right purlwise" instruction="m1rp" type="${type}" count="1" color="${color}" total="1" condition="${type == 'right'}" />
     </opaf:define_action>
 
     <opaf:define_action name="yarn_over" params="count=1 color=main">
