@@ -2,66 +2,308 @@
 
 <pattern xmlns:opaf="https://github.com/open-pattern-format/opaf/wiki" unique_id="0996e1be-b8ad-4093-ab19-c69b60fb1969" name="Test Pattern" >
 
-    <opaf:define_color name="main" value="black" />
-    <opaf:define_color name="secondary" value="#00FFFF" />
-
     <opaf:include uri="file://../actions.opaf" />
-    <opaf:include uri="file://metadata.opaf" />
-    <opaf:include uri="file://values.opaf" />
-    <opaf:include uri="file://blocks.opaf" />
-    <opaf:include uri="file://charts.opaf" />
+
 
     <opaf:define_image name="icon" uri="file://icon.jpg" size="500" />
     <opaf:define_image name="alpha_icon" uri="file://icon.png" size="500" />
 
-    <opaf:component name="Function Tests" >
-        <opaf:row type="rs" >
-            <opaf:block name="choose_function_test" repeat="4" />
+
+    <opaf:metadata>
+        <title>Test Pattern</title>
+        <description>Test pattern for *Open Pattern Format* libraries</description>
+        <copyright>Scott Ware</copyright>
+        <published>2023</published>
+
+        <image tag="cover" name="icon" />
+        <image tag="logo" name="alpha_icon" />
+        <image name="alpha_icon" />
+    
+        <tag>OPAF</tag>
+        <tag>Test</tag>
+
+        <size name="0" description="Small">
+            <measurement name="A" units="cm" value="86.5" />
+            <measurement name="B" units="cm" value="96.5" />
+        </size>
+
+        <size name="1" description="Large">
+            <measurement name="A" units="cm" value="89.5" />
+            <measurement name="B" units="cm" value="99.5" />
+        </size>
+
+        <color name="main" description="The main color" />
+        <color name="secondary" description="The secondary color" />
+
+        <designer name="Scott Ware" email="scoot.software@gmail.com" about="OPAF Developer">
+            <link name="Website" url="https://github.com/open-pattern-format" />
+            <image name="icon" />
+        </designer>
+
+        <technique name="Technique with no link" description="Description for technique with no link" />"
+        <technique name="Technique with link" url="https://github.com/open-pattern-format" description="Description for technique with link" />
+
+        <schematic>
+            <image name="icon" />
+            <element name="A" description="Element A" />
+            <element name="B" description="Element B" />
+        </schematic>
+
+        <yarn brand="OPAF" name="Test" weight="Chunky" unit_weight="50" length="100" />
+
+        <gauge units="in" width="4" height="4" stitches="12" rows="20" description="Test gauge description" />
+
+        <needles type="Circular" size="US 7" />
+
+        <notion name="Test notion" description="Test notion description" />
+
+        <note tag="colors" text="Note for the 'Colors' section." />
+        <note tag="yarns" text="Note for the 'Yarns' section." />
+        <note tag="sizing" text="Note for the 'Sizing' section." />
+        <note tag="needles" text="Note for the 'Needles &amp; Notions' section." />
+        <note tag="gauge" text="Note for the 'Gauge' section." />
+        <note tag="techniques" text="Note for the 'Techniques' section." />
+        <note text="Some additional information for the 'Notes' section." />
+
+    </opaf:metadata>
+
+
+    <opaf:define_color name="main" value="black" />
+    <opaf:define_color name="secondary" value="#00FFFF" />
+
+
+    <opaf:define_value name="size" value="0" config="true" allowed_values="0,1" description="0 = Small, 1 = Large" />
+    <opaf:define_value name="count" value="" config="true" required="false" description="A configurable value that **is not** required" />
+    <opaf:define_value name="required_count" value="" config="true" required="true" description="A configurable value that **is** required" />
+    
+    <opaf:define_value name="test_count" value="${required_count}" condition="${ISEMPTY(count)}" />
+    <opaf:define_value name="test_count" value="${count}" condition="${NOT(ISEMPTY(count))}" />
+
+    <opaf:define_value name="round_test" value="${ROUND(2.51)}" />
+    <opaf:define_value name="mround_test" value="${MROUND(3.1, 2)}" />
+    <opaf:define_value name="mround_decimal_test" value="${MROUND(2.367, 0.5)}" />
+    <opaf:define_value name="ceil_multiple_test" value="${CEIL(2.5, 2)}" />
+    <opaf:define_value name="floor_multiple_test" value="${FLOOR(2.5, 2)}" />
+    <opaf:define_value name="ceil_test" value="${CEIL(2.2)}" />
+    <opaf:define_value name="floor_test" value="${FLOOR(2.7)}" />
+
+
+    <opaf:define_chart name="variable_chart">
+        <opaf:row type="rs">
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
         </opaf:row>
-        <opaf:row type="ws" >
-            <opaf:block name="lchoose_function_test" repeat="12" />
+        <opaf:row type="ws">
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
         </opaf:row>
         <opaf:row type="rs">
-            <opaf:action name="knit" count="${round_test}" />
-            <opaf:action name="knit" count="${mround_test}" />
-            <opaf:action name="knit" count="${ROUND(mround_decimal_test)}" />
-            <opaf:action name="knit" count="${ceil_test}" />
-            <opaf:action name="knit" count="${ceil_multiple_test}" />
-            <opaf:action name="knit" count="${floor_test}" />
-            <opaf:action name="knit" count="${floor_multiple_test}" />
+            <opaf:action name="none" />
+            <opaf:action name="purl" count="4" color="main" />
+            <opaf:action name="knit" count="4" color="main" />
+            <opaf:action name="none" />
         </opaf:row>
+        <opaf:row type="ws">
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+        </opaf:row>
+        <opaf:row type="rs">
+            <opaf:action name="left_cable" count="3" />
+            <opaf:action name="knit" count="2" color="main" />
+            <opaf:action name="knit_front_back" />
+        </opaf:row>
+    </opaf:define_chart>
+
+    <opaf:define_chart name="long_chart">
+        <opaf:row type="rs">
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+        </opaf:row>
+        <opaf:row type="ws">
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+        </opaf:row>
+        <opaf:row type="rs">
+            <opaf:action name="none" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="none" count="5" color="main" />
+        </opaf:row>
+        <opaf:row type="ws">
+            <opaf:action name="none" count="10" color="main" />
+            <opaf:repeat count="0" >
+                <opaf:action name="purl" count="5" color="main" />
+                <opaf:action name="knit" count="5" color="main" />
+            </opaf:repeat>
+            <opaf:action name="none" count="10" color="main" />
+        </opaf:row>
+        <opaf:row type="rs">
+            <opaf:action name="none" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="none" count="5" color="main" />
+        </opaf:row>
+        <opaf:row type="ws">
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+        </opaf:row>
+        <opaf:row type="rs">
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+            <opaf:action name="knit" count="5" color="main" />
+            <opaf:action name="purl" count="5" color="main" />
+        </opaf:row>
+    </opaf:define_chart>
+
+    <opaf:define_chart name="small_chart">
+        <opaf:row type="rs">
+            <opaf:action name="knit" count="2" color="main" />
+            <opaf:action name="purl" count="2" color="main" />
+        </opaf:row>
+        <opaf:row type="ws">
+            <opaf:action name="none" count="1" color="main" />
+            <opaf:action name="left_cable" count="1" />
+            <opaf:action name="none" count="1" color="main" />
+        </opaf:row>
+        <opaf:row type="rs">
+            <opaf:action name="none" count="1" color="main" />
+            <opaf:action name="left_cable" count="1" />
+            <opaf:action name="none" count="1" color="main" />
+        </opaf:row>
+        <opaf:row type="ws">
+            <opaf:action name="knit" count="2" color="main" />
+            <opaf:action name="purl" count="2" color="main" />
+        </opaf:row>
+    </opaf:define_chart>
+
+
+    <opaf:define_block name="choose_function_test" params="option">
+        <opaf:action name="knit" count="${CHOOSE(option, [2,4,6])}" />
+    </opaf:define_block>
+
+    <opaf:define_block name="lchoose_function_test" params="option">
+        <opaf:action name="knit" count="${LCHOOSE(option, [1,2,3])}" />
+    </opaf:define_block>
+
+
+    <opaf:define_block name="text_action_test" params="">
+        <opaf:action name="text" instruction="Test instruction" />
+        <opaf:action name="text" instruction="Test instruction" description="Test description" />
+    </opaf:define_block>
+
+    <opaf:define_block name="place_marker_action_test" params="">
+        <opaf:action name="place_marker" />
+        <opaf:action name="place_marker" bor="true" />
+    </opaf:define_block>
+
+    <opaf:define_block name="slip_marker_action_test" params="">
+        <opaf:action name="slip_marker" />
+        <opaf:action name="slip_marker" bor="true" />
+    </opaf:define_block>
+
+    <opaf:define_block name="to_marker_action_test" params="">
+        <opaf:action name="to_marker" offset="0"/>
+        <opaf:action name="to_marker" offset="0" bor="true" />
+        <opaf:action name="to_marker" offset="2" />
+        <opaf:action name="to_marker" offset="-2" />
+        <opaf:action name="to_marker" offset="2" bor="true" />
+    </opaf:define_block>
+
+    <opaf:define_block name="to_end_action_test" params="">
+        <opaf:action name="to_end" offset="0"/>
+        <opaf:action name="to_end" offset="2" />
+        <opaf:action name="to_end" offset="-2" />
+    </opaf:define_block>
+
+
+    <opaf:define_block name="variable_chart_test" params="">
+        <opaf:action name="knit" chart="variable_chart:1" />
+        <opaf:action name="knit" chart="variable_chart:2" />
+        <opaf:action name="knit" chart="variable_chart:3" />
+        <opaf:action name="knit" chart="variable_chart:4" />
+        <opaf:action name="knit" chart="variable_chart:5" />
+    </opaf:define_block>
+
+    <opaf:define_block name="long_chart_test" params="">
+        <opaf:action name="purl" chart="long_chart:1" />
+         <opaf:action name="purl" chart="long_chart:7" />
+    </opaf:define_block>
+
+    <opaf:define_block name="small_chart_test" params="">
+         <opaf:action name="knit" chart="small_chart:1" />
+         <opaf:action name="knit" chart="small_chart:4" />
+    </opaf:define_block>
+
+
+    <opaf:component name="Function Tests" >
+        <opaf:instruction type="rs" row="1" >
+            <opaf:block name="choose_function_test" option="1" />
+            <opaf:block name="choose_function_test" option="2" />
+            <opaf:block name="choose_function_test" option="3" />
+        </opaf:instruction>
+        <opaf:instruction type="ws" row="2" >
+            <opaf:block name="lchoose_function_test" option="1" />
+            <opaf:block name="lchoose_function_test" option="2" />
+            <opaf:block name="lchoose_function_test" option="3" />
+            <opaf:block name="lchoose_function_test" option="4" />
+            <opaf:block name="lchoose_function_test" option="5" />
+            <opaf:block name="lchoose_function_test" option="6" />
+        </opaf:instruction>
     </opaf:component>
 
     <opaf:component name="Action Tests" >
-        <opaf:row type="rs" >
-            <opaf:block name="instruction_action_test" />
-        </opaf:row>
-        <opaf:row type="rs" >
+        <opaf:instruction type="none" header="Text Action" >
+            <opaf:block name="text_action_test" />
+        </opaf:instruction>
+        <opaf:instruction type="none" >
             <opaf:block name="place_marker_action_test" />
-        </opaf:row>
-        <opaf:row type="rs" >
+        </opaf:instruction>
+        <opaf:instruction type="none" >
             <opaf:block name="slip_marker_action_test" />
-        </opaf:row>
-        <opaf:row type="rs" >
+        </opaf:instruction>
+        <opaf:instruction type="none" >
             <opaf:block name="to_marker_action_test" />
-        </opaf:row>
-        <opaf:row type="rs" >
+        </opaf:instruction>
+        <opaf:instruction type="none" >
             <opaf:block name="to_end_action_test" />
-        </opaf:row>
-    </opaf:component>
-
-    <opaf:component name="Global Value Tests" >
-        <opaf:block name="test_opaf_prev_row_count" />
-        <opaf:block name="test_opaf_prev_row_offset" />
-        <opaf:block name="test_opaf_prev_row_count" repeat="5" />
-        <opaf:block name="test_opaf_prev_row_offset" repeat="5" />
+        </opaf:instruction>
     </opaf:component>
 
     <opaf:component name="Chart Tests" >
-        <opaf:block name="variable_chart_test" />
-        <opaf:block name="long_chart_test" />
-        <opaf:block name="small_chart_test" />
-        <opaf:block name="repeat_chart_test" />
+        <opaf:instruction type="none" header="Variable Chart" >
+            <opaf:block name="variable_chart_test" />
+        </opaf:instruction>
+        <opaf:instruction type="none" header="Long Chart" >
+            <opaf:block name="long_chart_test" />
+        </opaf:instruction>
+        <opaf:instruction type="none" header="Small Chart" >
+            <opaf:block name="small_chart_test" />
+        </opaf:instruction>
     </opaf:component>
 
     <opaf:component name="Text Tests" >
