@@ -215,7 +215,7 @@
         Special action used only for charting
     -->
     <opaf:define_action name="none" params="count=1">
-        <action name="none" instruction="" count="${count}" total="0" />
+        <action name="none" instruction="" count="${count}" total="${count}" />
     </opaf:define_action>
 
 </actions>
