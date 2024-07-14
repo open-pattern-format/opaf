@@ -32,9 +32,6 @@
             <measurement name="B" units="cm" value="99.5" />
         </size>
 
-        <color name="main" description="The main color" />
-        <color name="secondary" description="The secondary color" />
-
         <designer name="Scott Ware" email="scoot.software@gmail.com" about="OPAF Developer">
             <link name="Website" url="https://github.com/open-pattern-format" />
             <image name="icon" />
@@ -57,7 +54,6 @@
 
         <notion name="Test notion" description="Test notion description" />
 
-        <note tag="colors" text="Note for the 'Colors' section." />
         <note tag="yarns" text="Note for the 'Yarns' section." />
         <note tag="sizing" text="Note for the 'Sizing' section." />
         <note tag="needles" text="Note for the 'Needles &amp; Notions' section." />
@@ -72,9 +68,9 @@
     <opaf:define_color name="secondary" value="#00FFFF" />
 
 
-    <opaf:define_value name="size" value="0" config="true" allowed_values="0,1" description="0 = Small, 1 = Large" />
-    <opaf:define_value name="count" value="" config="true" required="false" description="A configurable value that **is not** required" />
-    <opaf:define_value name="required_count" value="" config="true" required="true" description="A configurable value that **is** required" />
+    <opaf:define_config name="size" value="0" allowed_values="0,1" description="0 = Small, 1 = Large" />
+    <opaf:define_config name="count" value="" required="false" description="A configurable value that **is not** required" />
+    <opaf:define_config name="required_count" value="" required="true" description="A configurable value that **is** required" />
     
     <opaf:define_value name="test_count" value="${required_count}" condition="${ISEMPTY(count)}" />
     <opaf:define_value name="test_count" value="${count}" condition="${NOT(ISEMPTY(count))}" />
@@ -261,12 +257,12 @@
 
 
     <opaf:component name="Function Tests" >
-        <opaf:instruction type="rs" row="1" >
+        <opaf:instruction name="Row 1 (RS)" >
             <opaf:block name="choose_function_test" option="1" />
             <opaf:block name="choose_function_test" option="2" />
             <opaf:block name="choose_function_test" option="3" />
         </opaf:instruction>
-        <opaf:instruction type="ws" row="2" >
+        <opaf:instruction name="Row 2 (WS)" >
             <opaf:block name="lchoose_function_test" option="1" />
             <opaf:block name="lchoose_function_test" option="2" />
             <opaf:block name="lchoose_function_test" option="3" />
@@ -277,31 +273,31 @@
     </opaf:component>
 
     <opaf:component name="Action Tests" >
-        <opaf:instruction type="none" header="Text Action" >
+        <opaf:instruction name="Text Action" >
             <opaf:block name="text_action_test" />
         </opaf:instruction>
-        <opaf:instruction type="none" >
+        <opaf:instruction>
             <opaf:block name="place_marker_action_test" />
         </opaf:instruction>
-        <opaf:instruction type="none" >
+        <opaf:instruction>
             <opaf:block name="slip_marker_action_test" />
         </opaf:instruction>
-        <opaf:instruction type="none" >
+        <opaf:instruction>
             <opaf:block name="to_marker_action_test" />
         </opaf:instruction>
-        <opaf:instruction type="none" >
+        <opaf:instruction>
             <opaf:block name="to_end_action_test" />
         </opaf:instruction>
     </opaf:component>
 
     <opaf:component name="Chart Tests" >
-        <opaf:instruction type="none" header="Variable Chart" >
+        <opaf:instruction name="Variable Chart" >
             <opaf:block name="variable_chart_test" />
         </opaf:instruction>
-        <opaf:instruction type="none" header="Long Chart" >
+        <opaf:instruction name="Long Chart" >
             <opaf:block name="long_chart_test" />
         </opaf:instruction>
-        <opaf:instruction type="none" header="Small Chart" >
+        <opaf:instruction name="Small Chart" >
             <opaf:block name="small_chart_test" />
         </opaf:instruction>
     </opaf:component>
