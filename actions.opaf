@@ -93,7 +93,7 @@
 
     <opaf:define_action name="knit_double_stitch" params="count=1 color=main">
         <action name="kds" description="knit double stitch" instruction="kds" count="${count}" color="${color}" total="${count}" condition="${LT(count, 2)}" />
-        <action name="kds" description="knit double stitch" instruction="kds ${count} times" count="${count}" color="${color}" total="${count}" condition="${GT(count, 1)}}" />
+        <action name="kds" description="knit double stitch" instruction="kds ${count} times" count="${count}" color="${color}" total="${count}" condition="${GT(count, 1)}" />
     </opaf:define_action>
 
     <opaf:define_action name="purl_double_stitch" params="count=1 color=main">
