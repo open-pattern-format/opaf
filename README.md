@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="assets/icon.png" height="500">
+    <img src="assets/opaf_banner.png" height="400">
 </p>
 
 `OPAF` is a comprehensive pattern file format aimed at yarn based crafts including knitting and crochet. The pattern is defined using a custom XML like syntax and can be compiled to a true XML interpretation using any of the supported libraries.
