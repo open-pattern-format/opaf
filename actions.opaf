@@ -186,17 +186,17 @@
 
     <opaf:define_action name="place_marker" params="bor=false">
         <action name="pm" description="place marker" instruction="pm" count="1" total="0" condition="${bor == 'false'}" />
-        <action name="pm" description="place beginning of round marker" instruction="place BOR marker" count="1" total="0" condition="${bor == 'true'}" />
+        <action name="place BOR marker" description="place beginning of round marker" instruction="place BOR marker" count="1" total="0" condition="${bor == 'true'}" />
     </opaf:define_action>
 
     <opaf:define_action name="slip_marker" params="bor=false">
         <action name="sm" description="slip marker" instruction="sm" count="1" total="0" condition="${bor == 'false'}" />
-        <action name="sm" description="slip beginning of round marker" instruction="sl BOR marker" count="1" total="0" condition="${bor == 'true'}" />
+        <action name="sl BOR marker" description="slip beginning of round marker" instruction="sl BOR marker" count="1" total="0" condition="${bor == 'true'}" />
     </opaf:define_action>
 
     <opaf:define_action name="remove_marker" params="bor=false">
         <action name="rm" description="remove marker" instruction="rm" count="1" total="0" condition="${bor == 'false'}" />
-        <action name="rm" description="remove beginning of round marker" instruction="remove BOR marker" count="1" total="0" condition="${bor == 'true'}" />
+        <action name="remove BOR marker" description="remove beginning of round marker" instruction="remove BOR marker" count="1" total="0" condition="${bor == 'true'}" />
     </opaf:define_action>
 
     <opaf:define_action name="to_marker" params="offset=0 bor=false">
