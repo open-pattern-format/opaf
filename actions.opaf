@@ -152,7 +152,7 @@
     </opaf:define_action>
 
     <opaf:define_action name="yarn_over" params="count=1 color=main">
-        <action name="yo" description="yarn over" instruction="yo" count="${count}" color="${color}" image_ws="yo" image_rs="yo" total="${count}" condition="LT(count, 2)" />
+        <action name="yo" description="yarn over" instruction="yo" count="${count}" color="${color}" image_ws="yo" image_rs="yo" total="${count}" condition="${LT(count, 2)}" />
         <action name="yo" description="yarn over" instruction="yo ${count} times" count="${count}" color="${color}" image_ws="yo" image_rs="yo" total="${count}" condition="GT(count, 1)" />
     </opaf:define_action>
 
@@ -162,7 +162,7 @@
     </opaf:define_action>
 
     <opaf:define_action name="purl_front_back" params="count=1 color=main">
-        <action name="pfb" description="purl front back" instruction="pfb" count="${count}" color="${color}" total="${count * 2}" condition="LT(count, 2)" />
+        <action name="pfb" description="purl front back" instruction="pfb" count="${count}" color="${color}" total="${count * 2}" condition="${LT(count, 2)}" />
         <action name="pfb" description="purl front back" instruction="pfb ${count} times" count="${count}" color="${color}" total="${count * 2}" condition="${GT(count, 1)}" />
     </opaf:define_action>
 
