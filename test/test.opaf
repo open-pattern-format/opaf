@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
-<pattern version="1.0.0" xmlns:opaf="https://github.com/open-pattern-format/opaf/wiki" name="Test Pattern" unique_id="0996e1be-b8ad-4093-ab19-c69b60fb1969">
-    <opaf:include uri="file://../actions.opaf" />
-
+<pattern version="1.0" xmlns:opaf="https://github.com/open-pattern-format/opaf" name="Test Pattern" unique_id="0996e1be-b8ad-4093-ab19-c69b60fb1969">
     <opaf:metadata>
         <title>Test Pattern</title>
         <copyright>Scott Ware</copyright>
@@ -43,13 +41,14 @@
         <note text="Some additional information for the 'Notes' section."/>
     </opaf:metadata>
 
+    <opaf:include uri="file://../actions.opaf" />
+
     <opaf:define_color name="main" value="#000000" description=""/>
     <opaf:define_color name="secondary" value="#00ffff" description=""/>
 
     <opaf:define_config name="size" value="0" required="false" allowed_values="0,1" description="0 = Small, 1 = Large"/>
     <opaf:define_config name="count" value="" required="false" description="A configurable value that **is not** required"/>
     <opaf:define_config name="required_count" value="" required="true" description="A configurable value that **is** required"/>
-
     <opaf:define_value unique_id="a70685c1-79bd-4818-90bf-d4dcfcbe6830" name="test_count" value="${required_count}" condition="${ISEMPTY(count)}"/>
     <opaf:define_value unique_id="18942ba8-f744-4070-b8f2-f8c8567433a3" name="test_count" value="${count}" condition="${NOT(ISEMPTY(count))}"/>
     <opaf:define_value unique_id="052633fc-3f06-409a-9404-3810cf4b726f" name="round_test" value="${ROUND(2.51)}"/>
