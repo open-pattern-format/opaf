@@ -149,6 +149,16 @@
             <opaf:block name="to_end_action_test"/>
         </opaf:instruction>
     </opaf:component>
+
+    <opaf:component name="Function Tests" unique_id="ad8d893f-3fcf-4cfa-87e4-b22609169f04">
+        <opaf:instruction name="Max Test">
+            <opaf:action name="text" description="Returns the largest value out of ${required_count} and 10" instruction="MAX(${required_count}, 10) = ${MAX(required_count, 10)}"/>
+        </opaf:instruction>
+        <opaf:instruction name="Min Test">
+            <opaf:action name="text" description="Returns the smallest value out of ${required_count} and 10" instruction="MIN(${required_count}, 10) = ${MIN(required_count, 10)}"/>
+        </opaf:instruction>
+    </opaf:component>
+
     <opaf:component name="Text Tests" unique_id="8d159515-5a2c-4c65-8f86-7455a8cdb7db">
         <opaf:text data="# H1 Test"/>
         <opaf:text data="## H2 Test"/>
