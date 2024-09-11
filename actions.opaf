@@ -180,42 +180,42 @@
         Text only instructions
     -->
     <opaf:define_action name="text" params="instruction description=null separator=true">
-        <action name="text" description="${description}" instruction="${instruction}" total="0" separator="${separator}" condition="${NOT(description == 'null')}" />
-        <action name="text" description="${instruction}" instruction="${instruction}" total="0" separator="${separator}" condition="${description == 'null'}" />
+        <action name="text" description="${description}" instruction="${instruction}" attrs="1" total="0" separator="${separator}" condition="${NOT(description == 'null')}" />
+        <action name="text" description="${instruction}" instruction="${instruction}" attrs="1" total="0" separator="${separator}" condition="${description == 'null'}" />
     </opaf:define_action>
 
     <opaf:define_action name="place_marker" params="bor=false">
-        <action name="pm" description="place marker" instruction="pm" count="1" total="0" condition="${bor == 'false'}" />
-        <action name="place BOR marker" description="place beginning of round marker" instruction="place BOR marker" count="1" total="0" condition="${bor == 'true'}" />
+        <action name="pm" description="place marker" instruction="pm" count="1" attrs="1" total="0" condition="${bor == 'false'}" />
+        <action name="place BOR marker" description="place beginning of round marker" instruction="place BOR marker" count="1" attrs="1" total="0" condition="${bor == 'true'}" />
     </opaf:define_action>
 
     <opaf:define_action name="slip_marker" params="bor=false">
-        <action name="sm" description="slip marker" instruction="sm" count="1" total="0" condition="${bor == 'false'}" />
-        <action name="sl BOR marker" description="slip beginning of round marker" instruction="sl BOR marker" count="1" total="0" condition="${bor == 'true'}" />
+        <action name="sm" description="slip marker" instruction="sm" count="1" attrs="1" attrs="1" total="0" condition="${bor == 'false'}" />
+        <action name="sl BOR marker" description="slip beginning of round marker" instruction="sl BOR marker" count="1" attrs="1" total="0" condition="${bor == 'true'}" />
     </opaf:define_action>
 
     <opaf:define_action name="remove_marker" params="bor=false">
-        <action name="rm" description="remove marker" instruction="rm" count="1" total="0" condition="${bor == 'false'}" />
-        <action name="remove BOR marker" description="remove beginning of round marker" instruction="remove BOR marker" count="1" total="0" condition="${bor == 'true'}" />
+        <action name="rm" description="remove marker" instruction="rm" count="1" attrs="1" total="0" condition="${bor == 'false'}" />
+        <action name="remove BOR marker" description="remove beginning of round marker" instruction="remove BOR marker" count="1" attrs="1" total="0" condition="${bor == 'true'}" />
     </opaf:define_action>
 
     <opaf:define_action name="to_marker" params="offset=0 bor=false">
-        <action name="tm" description="to marker" instruction="to marker" count="1" total="0" condition="${AND(offset == 0, bor == 'false')}" />
-        <action name="tm" description="to beginning of round marker" instruction="to BOR marker" count="1" total="0" condition="${AND(offset == 0, bor == 'true')}" />
-        <action name="tm" description="to ${ABS(offset)} stitches before marker" instruction="to ${ABS(offset)} sts before marker" count="1" total="0" condition="${AND(NOT(offset == 0), bor == 'false')}" />
-        <action name="tm" description="to ${ABS(offset)} stitches before beginning of round marker" instruction="to ${ABS(offset)} sts before BOR marker" count="1" total="0" condition="${AND(NOT(offset == 0), bor == 'true')}" />
+        <action name="tm" description="to marker" instruction="to marker" count="1" attrs="1" total="0" separator="false" condition="${AND(offset == 0, bor == 'false')}" />
+        <action name="tm" description="to beginning of round marker" instruction="to BOR marker" count="1" attrs="1" total="0" separator="false" condition="${AND(offset == 0, bor == 'true')}" />
+        <action name="tm" description="to ${ABS(offset)} stitches before marker" instruction="to ${ABS(offset)} sts before marker" count="1" attrs="1" total="0" separator="false" condition="${AND(NOT(offset == 0), bor == 'false')}" />
+        <action name="tm" description="to ${ABS(offset)} stitches before beginning of round marker" instruction="to ${ABS(offset)} sts before BOR marker" count="1" attrs="1" total="0" separator="false" condition="${AND(NOT(offset == 0), bor == 'true')}" />
     </opaf:define_action>
 
     <opaf:define_action name="to_end" params="offset=0">
-        <action name="te" description="to end" instruction="to end" count="1" total="0" condition="${offset == 0}" />
-        <action name="te" description="to ${ABS(offset)} stitches before end" instruction="to ${ABS(offset)} sts before end" count="1" total="0" condition="${NOT(offset == 0)}" />
+        <action name="te" description="to end" instruction="to end" count="1" attrs="1" total="0" separator="false" condition="${offset == 0}" />
+        <action name="te" description="to ${ABS(offset)} stitches before end" instruction="to ${ABS(offset)} sts before end" count="1" attrs="1" total="0" separator="false" condition="${NOT(offset == 0)}" />
     </opaf:define_action>
 
     <!--
         Special action used only for charting
     -->
     <opaf:define_action name="none" params="count=1">
-        <action name="none" description="no stitch" instruction="" count="${count}" image_ws="none" image_rs="none" total="${count}" />
+        <action name="none" description="no stitch" instruction="" count="${count}" image_ws="none" image_rs="none" attrs="2" total="${count}" />
     </opaf:define_action>
 
 </actions>
