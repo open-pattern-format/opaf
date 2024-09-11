@@ -190,7 +190,7 @@
     </opaf:define_action>
 
     <opaf:define_action name="slip_marker" params="bor=false">
-        <action name="sm" description="slip marker" instruction="sm" count="1" attrs="1" attrs="1" total="0" condition="${bor == 'false'}" />
+        <action name="sm" description="slip marker" instruction="sm" count="1" attrs="1" total="0" condition="${bor == 'false'}" />
         <action name="sl BOR marker" description="slip beginning of round marker" instruction="sl BOR marker" count="1" attrs="1" total="0" condition="${bor == 'true'}" />
     </opaf:define_action>
 
