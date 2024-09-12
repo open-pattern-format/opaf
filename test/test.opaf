@@ -102,7 +102,7 @@
     </opaf:define_block>
 
     <opaf:define_block name="action_knit">
-        <opaf:action name="knit" chart="knit:1"/>
+        <opaf:action name="knit" chart="knit"/>
         <opaf:action name="knit" count="0" tbl="false"/>
         <opaf:action name="knit" count="0" tbl="true"/>
         <opaf:action name="knit" count="2" tbl="false"/>
@@ -110,7 +110,7 @@
     </opaf:define_block>
 
     <opaf:define_block name="action_purl">
-        <opaf:action name="purl" chart="knit:1"/>
+        <opaf:action name="purl" chart="purl"/>
         <opaf:action name="purl" count="0" tbl="false"/>
         <opaf:action name="purl" count="0" tbl="true"/>
         <opaf:action name="purl" count="2" tbl="false"/>
