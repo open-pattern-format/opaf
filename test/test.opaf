@@ -93,10 +93,30 @@
         </opaf:row>
     </opaf:define_chart>
 
-    <opaf:define_block name="text_action_test">
-        <opaf:action name="text" instruction="Test instruction"/>
-        <opaf:action name="text" instruction="Test instruction" description="Test description"/>
+    <opaf:define_block name="action_text">
+        <opaf:action name="text" instruction="no description" />
+        <opaf:action name="text" instruction="no description or separator" separator='false' />
+        <opaf:action name="text" instruction="description and separator" description="Text with a description and no separator" />
+        <opaf:action name="text" instruction="description and no separator" description="Text with a description" separator='false' />
+        <opaf:action name="text" instruction="default" />
     </opaf:define_block>
+
+    <opaf:define_block name="action_knit">
+        <opaf:action name="knit" chart="knit:1"/>
+        <opaf:action name="knit" count="0" tbl="false"/>
+        <opaf:action name="knit" count="0" tbl="true"/>
+        <opaf:action name="knit" count="2" tbl="false"/>
+        <opaf:action name="knit" count="2" tbl="true"/>
+    </opaf:define_block>
+
+    <opaf:define_block name="action_purl">
+        <opaf:action name="purl" chart="knit:1"/>
+        <opaf:action name="purl" count="0" tbl="false"/>
+        <opaf:action name="purl" count="0" tbl="true"/>
+        <opaf:action name="purl" count="2" tbl="false"/>
+        <opaf:action name="purl" count="2" tbl="true"/>
+    </opaf:define_block>
+
     <opaf:define_block name="place_marker_action_test">
         <opaf:action name="place_marker"/>
         <opaf:action name="place_marker" bor="true"/>
@@ -120,21 +140,13 @@
 
     <opaf:component name="Action Tests" unique_id="ad8d893f-3fcf-4cfa-87e4-b22609169f03">
         <opaf:instruction name="Knit">
-            <opaf:action name="knit" chart="knit:1"/>
-            <opaf:action name="knit" count="0" tbl="false"/>
-            <opaf:action name="knit" count="0" tbl="true"/>
-            <opaf:action name="knit" count="2" tbl="false"/>
-            <opaf:action name="knit" count="2" tbl="true"/>
+            <opaf:block name="action_knit" />
         </opaf:instruction>
-        <opaf:instruction name="purl">
-            <opaf:action name="purl" chart="knit:1"/>
-            <opaf:action name="purl" count="0" tbl="false"/>
-            <opaf:action name="purl" count="0" tbl="true"/>
-            <opaf:action name="purl" count="2" tbl="false"/>
-            <opaf:action name="purl" count="2" tbl="true"/>
+        <opaf:instruction name="Purl">
+            <opaf:block name="action_purl" />
         </opaf:instruction>
         <opaf:instruction name="Text Action">
-            <opaf:block name="text_action_test"/>
+            <opaf:block name="action_text"/>
         </opaf:instruction>
         <opaf:instruction>
             <opaf:block name="place_marker_action_test"/>
