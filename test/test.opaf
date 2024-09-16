@@ -22,6 +22,7 @@
         </size>
         <designer name="Scott Ware" email="scoot.software@gmail.com" about="OPAF Developer">
             <image name="icon"/>
+            <image name="file"/>
             <link name="Website" url="https://github.com/open-pattern-format"/>
         </designer>
         <technique name="Technique with no link" description="Description for technique with no link"/>
@@ -29,6 +30,7 @@
         <gauge units="in" width="4" height="4" stitches="12" rows="20" description="Test gauge description"/>
         <schematic>
             <image name="file"/>
+            <image name="blog"/>
             <element name="A" description="Element A"/>
             <element name="B" description="Element B"/>
         </schematic>
@@ -49,6 +51,7 @@
     <opaf:define_config name="size" value="0" required="false" allowed_values="0,1" description="0 = Small, 1 = Large"/>
     <opaf:define_config name="count" value="" required="false" description="A configurable value that **is not** required"/>
     <opaf:define_config name="required_count" value="" required="true" description="A configurable value that **is** required"/>
+
     <opaf:define_value unique_id="a70685c1-79bd-4818-90bf-d4dcfcbe6830" name="test_count" value="${required_count}" condition="${ISEMPTY(count)}"/>
     <opaf:define_value unique_id="18942ba8-f744-4070-b8f2-f8c8567433a3" name="test_count" value="${count}" condition="${NOT(ISEMPTY(count))}"/>
     <opaf:define_value unique_id="052633fc-3f06-409a-9404-3810cf4b726f" name="round_test" value="${ROUND(2.51)}"/>
@@ -94,11 +97,9 @@
     </opaf:define_chart>
 
     <opaf:define_block name="action_text">
-        <opaf:action name="text" instruction="no description" />
-        <opaf:action name="text" instruction="no description or separator" separator='false' />
-        <opaf:action name="text" instruction="description and separator" description="Text with a description and no separator" />
-        <opaf:action name="text" instruction="description and no separator" description="Text with a description" separator='false' />
-        <opaf:action name="text" instruction="default" />
+        <opaf:action name="text" instruction="text with a separator" description="Text with a separator" />
+        <opaf:action name="text" instruction="text with no separator" description="Text with no separator" separator='false' />
+        <opaf:action name="text_with_url" instruction="text with url" description="text with url" url="https://openpatternformat.com" />
     </opaf:define_block>
 
     <opaf:define_block name="action_knit">
@@ -176,5 +177,10 @@
         <opaf:text data="## H2 Test"/>
         <opaf:text data="## H3 Test"/>
         <opaf:text data="Normal text with some **bold** text and some *italic* text."/>
+    </opaf:component>
+
+    <opaf:component name="Image Tests" unique_id="8d159515-5a2c-4c65-8f86-7455a8cdb7dc">
+        <opaf:image name="main" caption="Open Pattern Format banner" />
+        <opaf:image name="icon" />
     </opaf:component>
 </pattern>
