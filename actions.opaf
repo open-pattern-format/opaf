@@ -186,7 +186,7 @@
 
     <opaf:define_action name="text_with_url" params="instruction description url separator=true">
         <action name="text" description="${description}" instruction="${instruction}" url="${url}" attrs="text" total="0" condition="${EQ(separator,'true')}" />
-        <action name="text" description="${description}" instruction="${instruction}" url="${url}" attrs="text,nosep" total="0" url="${url}" condition="${EQ(separator,'false')}" />
+        <action name="text" description="${description}" instruction="${instruction}" url="${url}" attrs="text,nosep" total="0" condition="${EQ(separator,'false')}" />
     </opaf:define_action>
 
     <opaf:define_action name="place_marker" params="bor=false">
