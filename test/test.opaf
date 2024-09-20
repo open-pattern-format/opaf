@@ -48,9 +48,9 @@
     <opaf:define_color name="main" value="#000000" description=""/>
     <opaf:define_color name="secondary" value="#00ffff" description=""/>
 
-    <opaf:define_config name="size" value="0" required="false" allowed_values="0,1" description="0 = Small, 1 = Large"/>
-    <opaf:define_config name="count" value="" required="false" description="A configurable value that **is not** required"/>
-    <opaf:define_config name="required_count" value="" required="true" description="A configurable value that **is** required"/>
+    <opaf:define_config name="size" value="0" required="false" allowed_values="0,1" title="Size" description="0 = Small, 1 = Large"/>
+    <opaf:define_config name="count" value="" required="false" title="Count" description="A configurable value that **is not** required"/>
+    <opaf:define_config name="required_count" value="" required="true" title="Required Count" description="A configurable value that **is** required"/>
 
     <opaf:define_value unique_id="a70685c1-79bd-4818-90bf-d4dcfcbe6830" name="test_count" value="${required_count}" condition="${ISEMPTY(count)}"/>
     <opaf:define_value unique_id="18942ba8-f744-4070-b8f2-f8c8567433a3" name="test_count" value="${count}" condition="${NOT(ISEMPTY(count))}"/>
