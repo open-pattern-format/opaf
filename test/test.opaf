@@ -7,6 +7,8 @@
         <published>2023</published>
         <tag>OPAF</tag>
         <tag>Test</tag>
+        <link name="Website" url="https://openpatternformat.com"/>
+        <link name="GitHub" url="https://github.com/open-pattern-format"/>
         <notion name="Test notion" description="Test notion description"/>
         <needle type="Circular" size="US 7"/>
         <image name="main" tag="cover"/>
@@ -118,14 +120,23 @@
         <opaf:action name="purl" count="2" tbl="true"/>
     </opaf:define_block>
 
+    <opaf:define_block name="action_lifted_increase">
+        <opaf:action name="lifted_increase" />
+        <opaf:action name="lifted_increase" count="2" />
+        <opaf:action name="lifted_increase" type="right" />
+        <opaf:action name="lifted_increase" count="2" type="right" />
+    </opaf:define_block>
+
     <opaf:define_block name="place_marker_action_test">
         <opaf:action name="place_marker"/>
         <opaf:action name="place_marker" bor="true"/>
     </opaf:define_block>
+
     <opaf:define_block name="slip_marker_action_test">
         <opaf:action name="slip_marker"/>
         <opaf:action name="slip_marker" bor="true"/>
     </opaf:define_block>
+
     <opaf:define_block name="to_marker_action_test">
         <opaf:action name="to_marker" offset="0"/>
         <opaf:action name="to_marker" offset="0" bor="true"/>
@@ -133,6 +144,7 @@
         <opaf:action name="to_marker" offset="-2"/>
         <opaf:action name="to_marker" offset="2" bor="true"/>
     </opaf:define_block>
+
     <opaf:define_block name="to_end_action_test">
         <opaf:action name="to_end" offset="0"/>
         <opaf:action name="to_end" offset="2"/>
@@ -145,6 +157,9 @@
         </opaf:instruction>
         <opaf:instruction name="Purl">
             <opaf:block name="action_purl" />
+        </opaf:instruction>
+        <opaf:instruction name="Lifted Increase">
+            <opaf:block name="action_lifted_increase" />
         </opaf:instruction>
         <opaf:instruction name="Text Action">
             <opaf:block name="action_text"/>
@@ -169,6 +184,19 @@
         </opaf:instruction>
         <opaf:instruction name="Min Test">
             <opaf:action name="text" description="Returns the smallest value out of ${required_count} and 10" instruction="MIN(${required_count}, 10) = ${MIN(required_count, 10)}"/>
+        </opaf:instruction>
+        <opaf:instruction name="Bool Test">
+            <opaf:action name="text" description="Converts any value to a boolean value" instruction="BOOL('yes') = ${BOOL('yes')}"/>
+            <opaf:action name="text" description="Converts any value to a boolean value" instruction="BOOL('true') = ${BOOL('true')}"/>
+            <opaf:action name="text" description="Converts any value to a boolean value" instruction="BOOL('1') = ${BOOL('1')}"/>
+            <opaf:action name="text" description="Converts any value to a boolean value" instruction="BOOL('no') = ${BOOL('no')}"/>
+            <opaf:action name="text" description="Converts any value to a boolean value" instruction="BOOL('false') = ${BOOL('false')}"/>
+            <opaf:action name="text" description="Converts any value to a boolean value" instruction="BOOL('0') = ${BOOL('0')}"/>
+            <opaf:action name="text" description="Converts any value to a boolean value" instruction="BOOL('TRUE') = ${BOOL('TRUE')}"/>
+            <opaf:action name="text" description="Converts any value to a boolean value" instruction="BOOL('Yes') = ${BOOL('Yes')}"/>
+            <opaf:action name="text" description="Converts any value to a boolean value" instruction="BOOL('NO') = ${BOOL('NO')}"/>
+            <opaf:action name="text" description="Converts any value to a boolean value" instruction="BOOL('134') = ${BOOL('134')}"/>
+            <opaf:action name="text" description="Converts any value to a boolean value" instruction="BOOL('test') = ${BOOL('test')}"/>
         </opaf:instruction>
     </opaf:component>
 
