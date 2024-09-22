@@ -176,6 +176,19 @@
         <action name="pfbf" description="purl front back front" instruction="pfbf ${count} times" count="${count}" color="${color}" total="${count * 3}" condition="${GT(count, 1)}" />
     </opaf:define_action>
 
+    <!-- Lifted Increase
+        <type>
+            left
+            right
+        </type>
+    -->
+    <opaf:define_action name="lifted_increase" params="count=1 color=main type=left">
+        <action name="LLI" description="left lifted increase" instruction="LLI" count="${count}" color="${color}" total="${count * 2}" condition="${AND(LT(count, 2), EQ(type, 'left'))}" />
+        <action name="LLI" description="left lifted increase" instruction="LLI ${count} times" count="${count}" color="${color}" total="${count * 2}" condition="${AND(GT(count, 1), EQ(type, 'left'))}" />
+        <action name="RLI" description="right lifted increase" instruction="RLI" count="${count}" color="${color}" total="${count * 2}" condition="${AND(LT(count, 2), EQ(type, 'right'))}" />
+        <action name="RLI" description="right lifted increase" instruction="RLI ${count} times" count="${count}" color="${color}" total="${count * 2}" condition="${AND(GT(count, 1), EQ(type, 'right'))}" />
+    </opaf:define_action>
+
     <!--
         Text only instructions
     -->
