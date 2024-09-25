@@ -67,10 +67,10 @@
     </opaf:define_action>
 
     <opaf:define_action name="slip" params="count=1 color=main kwise=false wyif=false">
-        <action name="sl" description="slip purlwise with yarn in back" instruction="sl ${count}" count="${count}" color="${color}" image_ws="sl_wyif" image_rs="sl" wyif="${wyif}" kwise="${kwise}" total="${count}" condition="${AND(kwise == 'false', wyif == 'false')}" />
-        <action name="sl wyif" description="slip purlwise with yarn in front" instruction="sl ${count} wyif" count="${count}" color="${color}" image_ws="sl" image_rs="sl_wyif" wyif="${wyif}" kwise="${kwise}" total="${count}" condition="${AND(kwise == 'false', wyif == 'true')}" />
-        <action name="sl kwise" description="slip knitwise with yarn in back" instruction="sl ${count} kwise" count="${count}" color="${color}" image_ws="sl_kwise_wyif" image_rs="sl_kwise" wyif="${wyif}" kwise="${kwise}" total="${count}" condition="${AND(kwise == 'true', wyif == 'false')}" />
-        <action name="sl kwise wyif" description="slip knitwise with yarn in front" instruction="sl ${count} kwise wyif" count="${count}" color="${color}" image_ws="sl_kwise" image_rs="sl_kwise_wyif" wyif="${wyif}" kwise="${kwise}" total="${count}" condition="${AND(kwise == 'true', wyif == 'true')}" />
+        <action name="sl" description="slip purlwise with yarn in back" instruction="sl${count}" count="${count}" color="${color}" image_ws="sl_wyif" image_rs="sl" wyif="${wyif}" kwise="${kwise}" total="${count}" condition="${AND(kwise == 'false', wyif == 'false')}" />
+        <action name="sl wyif" description="slip purlwise with yarn in front" instruction="sl${count} wyif" count="${count}" color="${color}" image_ws="sl" image_rs="sl_wyif" wyif="${wyif}" kwise="${kwise}" total="${count}" condition="${AND(kwise == 'false', wyif == 'true')}" />
+        <action name="sl kwise" description="slip knitwise with yarn in back" instruction="sl${count} kwise" count="${count}" color="${color}" image_ws="sl_kwise_wyif" image_rs="sl_kwise" wyif="${wyif}" kwise="${kwise}" total="${count}" condition="${AND(kwise == 'true', wyif == 'false')}" />
+        <action name="sl kwise wyif" description="slip knitwise with yarn in front" instruction="sl${count} kwise wyif" count="${count}" color="${color}" image_ws="sl_kwise" image_rs="sl_kwise_wyif" wyif="${wyif}" kwise="${kwise}" total="${count}" condition="${AND(kwise == 'true', wyif == 'true')}" />
     </opaf:define_action>
 
     <opaf:define_action name="slip_knit" params="stitches=2 count=1 color=main">
