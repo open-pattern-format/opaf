@@ -182,9 +182,11 @@
         <opaf:instruction name="Max Test">
             <opaf:action name="text" description="Returns the largest value out of ${required_count} and 10" instruction="MAX(${required_count}, 10) = ${MAX(required_count, 10)}"/>
         </opaf:instruction>
+
         <opaf:instruction name="Min Test">
             <opaf:action name="text" description="Returns the smallest value out of ${required_count} and 10" instruction="MIN(${required_count}, 10) = ${MIN(required_count, 10)}"/>
         </opaf:instruction>
+
         <opaf:instruction name="Bool Test">
             <opaf:action name="text" description="Converts any value to a boolean value" instruction="BOOL('yes') = ${BOOL('yes')}"/>
             <opaf:action name="text" description="Converts any value to a boolean value" instruction="BOOL('true') = ${BOOL('true')}"/>
@@ -198,6 +200,12 @@
             <opaf:action name="text" description="Converts any value to a boolean value" instruction="BOOL('134') = ${BOOL('134')}"/>
             <opaf:action name="text" description="Converts any value to a boolean value" instruction="BOOL('test') = ${BOOL('test')}"/>
         </opaf:instruction>
+
+        <opaf:instruction name="IF Test" >
+            <opaf:action name="text" description="Returns a given value based on a condition" instruction="IF(true, 'True', 'False') = ${IF(BOOL('true'),'True','False')}" />
+            <opaf:action name="text" description="Returns a given value based on a condition" instruction="IF(false, 'True', 'False') = ${IF(BOOL('false'),'True','False')}" />
+        </opaf:instruction>
+
     </opaf:component>
 
     <opaf:component name="Text Tests" unique_id="8d159515-5a2c-4c65-8f86-7455a8cdb7db">
