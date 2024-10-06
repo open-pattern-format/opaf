@@ -189,6 +189,16 @@
         <action name="RLI" description="right lifted increase" instruction="RLI ${count} times" count="${count}" color="${color}" total="${count * 2}" condition="${AND(GT(count, 1), EQ(type, 'right'))}" />
     </opaf:define_action>
 
+    <opaf:define_action name="central_double_decrease" params="count=1 color=main">
+        <action name="cdd" description="slip 2 stitches together, knit 1, pass slipped stitches over" instruction="cdd" total="${count}" color="${color}" image_ws="cdd" image_rs="cdd" count="${count}" condition="${EQ(count, 1)}" />
+        <action name="cdd" description="slip 2 stitches together, knit 1, pass slipped stitches over" instruction="cdd ${count} times" total="${count}" color="${color}" image_ws="cdd" image_rs="cdd" count="${count}" condition="${GT(count, 1)}" />
+    </opaf:define_action>
+
+    <opaf:define_action name="central_double_decrease_purl" params="count=1 color=main">
+        <action name="cddp" description="slip 2 stitches together, purl 1, pass slipped stitches over" instruction="cddp" total="${count}" color="${color}" image_ws="cddp" image_rs="cddp" count="${count}" condition="${EQ(count, 1)}" />
+        <action name="cddp" description="slip 2 stitches together, purl 1, pass slipped stitches over" instruction="cddp ${count} times" total="${count}" color="${color}" image_ws="cddp" image_rs="cddp" count="${count}" condition="${GT(count, 1)}" />
+    </opaf:define_action>
+
     <!--
         Text only instructions
     -->

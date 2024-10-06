@@ -83,6 +83,7 @@
             <opaf:action name="knit" count="2" tbl="true"/>
         </opaf:row>
     </opaf:define_chart>
+
     <opaf:define_chart name="purl">
         <opaf:row type="rs">
             <opaf:action name="purl" count="2" tbl="false"/>
@@ -95,6 +96,22 @@
         <opaf:row type="round">
             <opaf:action name="purl" count="2" tbl="false"/>
             <opaf:action name="purl" count="2" tbl="true"/>
+        </opaf:row>
+    </opaf:define_chart>
+
+    <opaf:define_chart name="central_double_decrease">
+        <opaf:row type="rs">
+            <opaf:action name="central_double_decrease" />
+            <opaf:action name="central_double_decrease_purl" count="2" />
+        </opaf:row>
+        <opaf:row type="ws">
+            <opaf:action name="central_double_decrease" count="2" />
+            <opaf:action name="central_double_decrease_purl" />
+        </opaf:row>
+        <opaf:row type="round">
+            <opaf:action name="central_double_decrease" />
+            <opaf:action name="central_double_decrease_purl" />
+            <opaf:action name="central_double_decrease" />
         </opaf:row>
     </opaf:define_chart>
 
@@ -151,6 +168,16 @@
         <opaf:action name="to_end" offset="-2"/>
     </opaf:define_block>
 
+    <opaf:define_block name="central_double_decrease_action_test">
+        <opaf:action name="central_double_decrease" chart="central_double_decrease" />
+        <opaf:action name="central_double_decrease" count="4" />
+    </opaf:define_block>
+
+    <opaf:define_block name="central_double_decrease_purl_action_test">
+        <opaf:action name="central_double_decrease_purl" chart="central_double_decrease" />
+        <opaf:action name="central_double_decrease_purl" count="4" />
+    </opaf:define_block>
+
     <opaf:component name="Action Tests" unique_id="ad8d893f-3fcf-4cfa-87e4-b22609169f03">
         <opaf:instruction name="Knit">
             <opaf:block name="action_knit" />
@@ -161,20 +188,24 @@
         <opaf:instruction name="Lifted Increase">
             <opaf:block name="action_lifted_increase" />
         </opaf:instruction>
-        <opaf:instruction name="Text Action">
+        <opaf:instruction name="Text">
             <opaf:block name="action_text"/>
         </opaf:instruction>
-        <opaf:instruction>
+        <opaf:instruction name="Place Marker">
             <opaf:block name="place_marker_action_test"/>
         </opaf:instruction>
-        <opaf:instruction>
+        <opaf:instruction name="Slip Marker">
             <opaf:block name="slip_marker_action_test"/>
         </opaf:instruction>
-        <opaf:instruction>
+        <opaf:instruction name="To Marker">
             <opaf:block name="to_marker_action_test"/>
         </opaf:instruction>
-        <opaf:instruction>
+        <opaf:instruction name="To End">
             <opaf:block name="to_end_action_test"/>
+        </opaf:instruction>
+        <opaf:instruction name="Central Double Decrease">
+            <opaf:block name="central_double_decrease_action_test"/>
+            <opaf:block name="central_double_decrease_purl_action_test"/>
         </opaf:instruction>
     </opaf:component>
 
