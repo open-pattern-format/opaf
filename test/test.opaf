@@ -125,6 +125,8 @@
         <opaf:action name="knit" chart="knit"/>
         <opaf:action name="knit" count="0" tbl="false"/>
         <opaf:action name="knit" count="0" tbl="true"/>
+        <opaf:action name="knit" count="1" tbl="false"/>
+        <opaf:action name="knit" count="1" tbl="true"/>
         <opaf:action name="knit" count="2" tbl="false"/>
         <opaf:action name="knit" count="2" tbl="true"/>
     </opaf:define_block>
@@ -133,8 +135,38 @@
         <opaf:action name="purl" chart="purl"/>
         <opaf:action name="purl" count="0" tbl="false"/>
         <opaf:action name="purl" count="0" tbl="true"/>
+        <opaf:action name="purl" count="1" tbl="false"/>
+        <opaf:action name="purl" count="1" tbl="true"/>
         <opaf:action name="purl" count="2" tbl="false"/>
         <opaf:action name="purl" count="2" tbl="true"/>
+    </opaf:define_block>
+
+    <opaf:define_block name="action_knit_together">
+        <opaf:action name="knit_together" />
+        <opaf:action name="knit_together" count="0" stitches="5" tbl="false"/>
+        <opaf:action name="knit_together" count="0" tbl="true"/>
+        <opaf:action name="knit_together" count="1" tbl="false"/>
+        <opaf:action name="knit_together" count="1" tbl="true"/>
+        <opaf:action name="knit_together" count="2" stitches="5" tbl="false"/>
+        <opaf:action name="knit_together" count="2" tbl="true"/>
+    </opaf:define_block>
+
+    <opaf:define_block name="action_purl_together">
+        <opaf:action name="purl_together" />
+        <opaf:action name="purl_together" count="0" stitches="5" tbl="false"/>
+        <opaf:action name="purl_together" count="0" tbl="true"/>
+        <opaf:action name="purl_together" count="1" tbl="false"/>
+        <opaf:action name="purl_together" count="1" tbl="true"/>
+        <opaf:action name="purl_together" count="2" stitches="5" tbl="false"/>
+        <opaf:action name="purl_together" count="2" tbl="true"/>
+    </opaf:define_block>
+
+    <opaf:define_block name="action_slip">
+        <opaf:action name="slip" />
+        <opaf:action name="slip" count="5" />
+        <opaf:action name="slip" kwise="true" wyif="true" />
+        <opaf:action name="slip" kwise="true" wyif="false" />
+        <opaf:action name="slip" kwise="false" wyif="true" />
     </opaf:define_block>
 
     <opaf:define_block name="action_lifted_increase">
@@ -184,6 +216,15 @@
         </opaf:instruction>
         <opaf:instruction name="Purl">
             <opaf:block name="action_purl" />
+        </opaf:instruction>
+        <opaf:instruction name="Slip">
+            <opaf:block name="action_slip" />
+        </opaf:instruction>
+        <opaf:instruction name="Knit Together">
+            <opaf:block name="action_knit_together" />
+        </opaf:instruction>
+        <opaf:instruction name="Purl Together">
+            <opaf:block name="action_purl_together" />
         </opaf:instruction>
         <opaf:instruction name="Lifted Increase">
             <opaf:block name="action_lifted_increase" />
