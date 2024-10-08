@@ -169,6 +169,22 @@
         <opaf:action name="slip" kwise="false" wyif="true" />
     </opaf:define_block>
 
+    <opaf:define_block name="action_slip_knit">
+        <opaf:action name="slip_knit" />
+        <opaf:action name="slip_knit" count="0" />
+        <opaf:action name="slip_knit" count="5" />
+        <opaf:action name="slip_knit" stitches="3" />
+        <opaf:action name="slip_knit" stitches="3" count="5" />
+    </opaf:define_block>
+
+    <opaf:define_block name="action_slip_purl">
+        <opaf:action name="slip_purl" />
+        <opaf:action name="slip_purl" count="0" />
+        <opaf:action name="slip_purl" count="5" />
+        <opaf:action name="slip_purl" stitches="3" />
+        <opaf:action name="slip_purl" stitches="3" count="5" />
+    </opaf:define_block>
+
     <opaf:define_block name="action_lifted_increase">
         <opaf:action name="lifted_increase" />
         <opaf:action name="lifted_increase" count="2" />
@@ -220,6 +236,12 @@
         <opaf:instruction name="Slip">
             <opaf:block name="action_slip" />
         </opaf:instruction>
+        <opaf:instruction name="Slip Knit">
+            <opaf:block name="action_slip_knit" />
+        </opaf:instruction>
+        <opaf:instruction name="Slip Purl">
+            <opaf:block name="action_slip_purl" />
+        </opaf:instruction>
         <opaf:instruction name="Knit Together">
             <opaf:block name="action_knit_together" />
         </opaf:instruction>
@@ -250,6 +272,47 @@
         </opaf:instruction>
     </opaf:component>
 
+    <opaf:component name="Repeat Tests" unique_id="ad8d893f-3fcf-4cfa-87e4-b22609169f05">
+        <opaf:repeat count="5" >
+            <opaf:instruction name="Repeat 5">
+                <opaf:action name="knit" />
+                <opaf:action name="purl" />
+            </opaf:instruction>
+        </opaf:repeat>
+        <opaf:repeat count="1" >
+            <opaf:instruction name="Repeat 1">
+                <opaf:action name="knit" />
+                <opaf:action name="purl" />
+            </opaf:instruction>
+        </opaf:repeat>
+        <opaf:repeat count="0" >
+            <opaf:instruction name="Repeat 0">
+                <opaf:action name="knit" />
+                <opaf:action name="purl" />
+            </opaf:instruction>
+        </opaf:repeat>
+        <opaf:repeat title="Custom title for repeat 5 times" count="5" >
+            <opaf:instruction name="Custom Repeat 5">
+                <opaf:action name="knit" />
+                <opaf:action name="purl" />
+            </opaf:instruction>
+        </opaf:repeat>
+        <opaf:instruction name="Repeats">
+            <opaf:repeat count="5" >
+                <opaf:action name="knit" />
+                <opaf:action name="purl" />
+            </opaf:repeat>
+            <opaf:repeat count="1" >
+                <opaf:action name="knit" />
+                <opaf:action name="purl" />
+            </opaf:repeat>
+            <opaf:repeat count="0" >
+                <opaf:action name="knit" />
+                <opaf:action name="purl" />
+            </opaf:repeat>
+        </opaf:instruction>
+    </opaf:component>
+
     <opaf:component name="Function Tests" unique_id="ad8d893f-3fcf-4cfa-87e4-b22609169f04">
         <opaf:instruction name="Max Test">
             <opaf:action name="text" description="Returns the largest value out of ${required_count} and 10" instruction="MAX(${required_count}, 10) = ${MAX(required_count, 10)}"/>
@@ -276,6 +339,18 @@
         <opaf:instruction name="IF Test" >
             <opaf:action name="text" description="Returns a given value based on a condition" instruction="IF(true, 'True', 'False') = ${IF(BOOL('true'),'True','False')}" />
             <opaf:action name="text" description="Returns a given value based on a condition" instruction="IF(false, 'True', 'False') = ${IF(BOOL('false'),'True','False')}" />
+        </opaf:instruction>
+
+        <opaf:instruction name="MOD Test">
+            <opaf:action name="text" description="Returns the modulo of ${required_count} and 3" instruction="MOD(${required_count}, 3) = ${MOD(required_count, 3)}"/>
+            <opaf:action name="text" description="Returns the modulo of 10 and 2" instruction="MOD(10, 2) = ${MOD(10, 2)}"/>
+            <opaf:action name="text" description="Returns the modulo of 10.5 and 2.1" instruction="MOD(10.5, 2.1) = ${MOD(10.5, 2.1)}"/>
+        </opaf:instruction>
+
+        <opaf:instruction name="REPT Test" >
+            <opaf:action name="text" description="Returns 'test' ${required_count} times" instruction="REPT('test', ${required_count}) = ${REPT('test', required_count, '')}" />
+            <opaf:action name="text" description="Returns 'test' ${required_count} times with ', ' separator" instruction="REPT('test', ${required_count}, ', ') = ${REPT('test', required_count, ', ')}" />
+            <opaf:action name="text" description="Returns '14' ${required_count} times" instruction="REPT(14, ${required_count}) = ${REPT(14, required_count, '')}" />
         </opaf:instruction>
 
     </opaf:component>

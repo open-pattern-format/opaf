@@ -63,17 +63,13 @@
     </opaf:define_action>
 
     <opaf:define_action name="slip_knit" params="stitches=2 count=1 color=main">
-        <action name="ssk" description="slip slip knit" instruction="ssk" stitches="${stitches}" count="${count}" color="${color}" total="${count}" condition="${AND(stitches == 2, LT(count, 2))}" />
-        <action name="ssk" description="slip slip knit" instruction="ssk ${count} times" stitches="${stitches}" count="${count}" color="${color}" total="${count}" condition="${AND(stitches == 2, GT(count,1))}" />
-        <action name="sssk" description="slip slip slip knit" instruction="sssk" stitches="${stitches}" count="${count}" color="${color}" total="${count}" condition="${AND(stitches == 3, LT(count, 2))}" />
-        <action name="sssk" description="slip slip slip knit" instruction="sssk ${count} times" stitches="${stitches}" count="${count}" color="${color}" total="${count}" condition="${AND(stitches == 3, GT(count, 1))}" />
+        <action name="${REPT('s', stitches, '')}k" description="${REPT('slip', stitches, ' ')} knit" instruction="${REPT('s', stitches, '')}k" stitches="${stitches}" count="${count}" color="${color}" total="${count}" condition="${LT(count, 2)}" />
+        <action name="${REPT('s', stitches, '')}k" description="${REPT('slip', stitches, ' ')} knit" instruction="${REPT('s', stitches, '')}k ${count} times" stitches="${stitches}" count="${count}" color="${color}" total="${count}" condition="${GT(count,1)}" />
     </opaf:define_action>
 
     <opaf:define_action name="slip_purl" params="stitches=2 count=1 color=main">
-        <action name="ssp" description="slip slip purl" instruction="ssp" stitches="${stitches}" count="${count}" color="${color}" total="${count}" condition="${AND(stitches == 2, LT(count, 2))}" />
-        <action name="ssp" description="slip slip purl" instruction="ssp ${count} times" stitches="${stitches}" count="${count}" color="${color}" total="${count}" condition="${AND(stitches == 2, GT(count, 1))}" />
-        <action name="sssp" description="slip slip slip purl" instruction="sssp" stitches="${stitches}" count="${count}" color="${color}" total="${count}" condition="${AND(stitches == 3, LT(count, 2))}" />
-        <action name="sssp" description="slip slip slip purl" instruction="sssp ${count} times" stitches="${stitches}" count="${count}" color="${color}" total="${count}" condition="${AND(stitches == 3, GT(count, 1))}" />
+        <action name="${REPT('s', stitches, '')}p" description="${REPT('slip', stitches, ' ')} purl" instruction="${REPT('s', stitches, '')}p" stitches="${stitches}" count="${count}" color="${color}" total="${count}" condition="${LT(count, 2)}" />
+        <action name="${REPT('s', stitches, '')}p" description="${REPT('slip', stitches, ' ')} purl" instruction="${REPT('s', stitches, '')}p ${count} times" stitches="${stitches}" count="${count}" color="${color}" total="${count}" condition="${GT(count, 1)}" />
     </opaf:define_action>
 
     <opaf:define_action name="double_stitch" params="color=main">
