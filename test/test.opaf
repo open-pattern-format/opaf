@@ -279,6 +279,30 @@
                 <opaf:action name="purl" />
             </opaf:instruction>
         </opaf:repeat>
+        <opaf:repeat count="5" >
+            <opaf:instruction name="Repeat 5">
+                <opaf:action name="knit" />
+                <opaf:action name="purl" />
+            </opaf:instruction>
+            <opaf:repeat count="2" >
+                <opaf:instruction name="Nested Repeat">
+                    <opaf:action name="knit" />
+                    <opaf:action name="purl" />
+                </opaf:instruction>
+            </opaf:repeat>
+        </opaf:repeat>
+         <opaf:repeat count="1" >
+            <opaf:instruction name="Repeat 1">
+                <opaf:action name="knit" />
+                <opaf:action name="purl" />
+            </opaf:instruction>
+            <opaf:repeat count="2" >
+                <opaf:instruction name="Nested Repeat">
+                    <opaf:action name="knit" />
+                    <opaf:action name="purl" />
+                </opaf:instruction>
+            </opaf:repeat>
+        </opaf:repeat>
         <opaf:repeat count="1" >
             <opaf:instruction name="Repeat 1">
                 <opaf:action name="knit" />
@@ -292,7 +316,19 @@
             </opaf:instruction>
         </opaf:repeat>
         <opaf:repeat title="Custom title for repeat 5 times" count="5" >
-            <opaf:instruction name="Custom Repeat 5">
+            <opaf:instruction name="Custom Repeat">
+                <opaf:action name="knit" />
+                <opaf:action name="purl" />
+            </opaf:instruction>
+        </opaf:repeat>
+        <opaf:repeat title="Custom title for repeat 0 times" count="0" >
+            <opaf:instruction name="Custom Repeat">
+                <opaf:action name="knit" />
+                <opaf:action name="purl" />
+            </opaf:instruction>
+        </opaf:repeat>
+        <opaf:repeat title="Custom title for repeat 1 times" count="1" >
+            <opaf:instruction name="Custom Repeat">
                 <opaf:action name="knit" />
                 <opaf:action name="purl" />
             </opaf:instruction>
