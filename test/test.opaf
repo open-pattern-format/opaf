@@ -69,6 +69,30 @@
     <opaf:define_image name="blog" uri="file://../assets/opaf_blog.png" size="500"/>
     <opaf:define_image name="file" uri="file://../assets/opaf_ff.png" size="500"/>
 
+    <opaf:define_chart name="none">
+        <opaf:row type="rs">
+            <opaf:action name="none" count="2" />
+            <opaf:action name="knit" count="2" />
+            <opaf:action name="none" count="2" />
+            <opaf:action name="knit" count="2" />
+            <opaf:action name="none" count="2" />
+        </opaf:row>
+        <opaf:row type="ws">
+            <opaf:action name="none" count="2" />
+            <opaf:action name="knit" count="2" />
+            <opaf:action name="none" count="2" />
+            <opaf:action name="knit" count="2" />
+            <opaf:action name="none" count="2" />
+        </opaf:row>
+        <opaf:row type="round">
+            <opaf:action name="none" count="2" />
+            <opaf:action name="knit" count="2" />
+            <opaf:action name="none" count="2" />
+            <opaf:action name="knit" count="2" />
+            <opaf:action name="none" count="2" />
+        </opaf:row>
+    </opaf:define_chart>
+
     <opaf:define_chart name="knit">
         <opaf:row type="rs">
             <opaf:action name="knit" count="2" tbl="false"/>
@@ -396,6 +420,12 @@
         <opaf:text data="## H2 Test"/>
         <opaf:text data="## H3 Test"/>
         <opaf:text data="Normal text with some **bold** text and some *italic* text."/>
+    </opaf:component>
+
+    <opaf:component name="Chart Tests" unique_id="8d159515-5a2c-4c65-8f86-7455a8cdb7ef">
+        <opaf:instruction name="Chart Instruction Test" >
+            <opaf:action name="text" description="None" instruction="none" chart="none" />
+        </opaf:instruction>
     </opaf:component>
 
     <opaf:component name="Image Tests" unique_id="8d159515-5a2c-4c65-8f86-7455a8cdb7dc">
