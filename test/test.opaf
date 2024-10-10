@@ -80,14 +80,18 @@
         <opaf:row type="ws">
             <opaf:action name="none" count="2" />
             <opaf:action name="knit" count="2" />
-            <opaf:action name="none" count="2" />
-            <opaf:action name="knit" count="2" />
+            <opaf:repeat count="2" >
+                <opaf:action name="none" count="2" />
+                <opaf:action name="knit" count="2" />
+            </opaf:repeat>
             <opaf:action name="none" count="2" />
         </opaf:row>
         <opaf:row type="round">
             <opaf:action name="none" count="2" />
             <opaf:action name="knit" count="2" />
-            <opaf:action name="none" count="2" />
+            <opaf:repeat count="2" >
+                <opaf:action name="none" count="2" />
+            </opaf:repeat>
             <opaf:action name="knit" count="2" />
             <opaf:action name="none" count="2" />
         </opaf:row>
@@ -141,7 +145,7 @@
 
     <opaf:define_block name="action_text">
         <opaf:action name="text" instruction="text with a separator" description="Text with a separator" />
-        <opaf:action name="text" instruction="text with no separator" description="Text with no separator" separator='false' />
+        <opaf:action name="text" instruction="text with no separator" description="Text with no separator" attrs="nosep" />
         <opaf:action name="text_with_url" instruction="text with url" description="text with url" url="https://openpatternformat.com" />
     </opaf:define_block>
 

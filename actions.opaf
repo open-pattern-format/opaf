@@ -185,12 +185,12 @@
     <!--
         Text only instructions
     -->
-    <opaf:define_action name="text" params="instruction description separator=true">
-        <action name="text" description="${description}" instruction="${instruction}" attrs="text${IF(BOOL(separator), '', ',nosep')}" total="0" />
+    <opaf:define_action name="text" params="instruction description">
+        <action name="text" description="${description}" instruction="${instruction}" attrs="text" total="0" />
     </opaf:define_action>
 
-    <opaf:define_action name="text_with_url" params="instruction description url separator=true">
-        <action name="text" description="${description}" instruction="${instruction}" url="${url}" attrs="text${IF(BOOL(separator), '', ',nosep')}" total="0" />
+    <opaf:define_action name="text_with_url" params="instruction description url">
+        <action name="text" description="${description}" instruction="${instruction}" url="${url}" attrs="text" total="0" />
     </opaf:define_action>
 
     <opaf:define_action name="place_marker" params="bor=false">
