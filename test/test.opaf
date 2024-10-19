@@ -97,6 +97,39 @@
         </opaf:row>
     </opaf:define_chart>
 
+    <opaf:define_chart name="text">
+        <opaf:row type="rs">
+            <opaf:action name="none" count="2" />
+            <opaf:action name="knit" count="2" attrs="chart" />
+            <opaf:action name="none" count="2" />
+            <opaf:action name="knit" count="2" attrs="chart" />
+            <opaf:action name="none" count="2" />
+            <opaf:action name="knit" count="4" attrs="text" />
+        </opaf:row>
+        <opaf:row type="ws">
+            <opaf:action name="none" count="2" />
+            <opaf:action name="knit" count="2" attrs="chart" />
+            <opaf:repeat count="2" >
+                <opaf:action name="none" count="2" />
+                <opaf:action name="knit" count="2" attrs="chart" />
+            </opaf:repeat>
+            <opaf:action name="none" count="2" />
+            <opaf:action name="knit" count="0" attrs="text" />
+            <opaf:action name="to_end" />
+        </opaf:row>
+        <opaf:row type="round">
+            <opaf:action name="none" count="2" attrs="chart" />
+            <opaf:action name="knit" count="2" attrs="chart" />
+            <opaf:repeat count="2" >
+                <opaf:action name="none" count="2" attrs="chart" />
+            </opaf:repeat>
+            <opaf:action name="knit" count="2" attrs="chart" />
+            <opaf:action name="none" count="2" />
+            <opaf:action name="knit" count="0" attrs="text" />
+            <opaf:action name="to_end" />
+        </opaf:row>
+    </opaf:define_chart>
+
     <opaf:define_chart name="knit">
         <opaf:row type="rs">
             <opaf:action name="knit" count="2" tbl="false"/>
@@ -427,8 +460,11 @@
     </opaf:component>
 
     <opaf:component name="Chart Tests" unique_id="8d159515-5a2c-4c65-8f86-7455a8cdb7ef">
-        <opaf:instruction name="Chart Instruction Test" >
+        <opaf:instruction name="Chart Instruction None Test" >
             <opaf:action name="text" description="None" instruction="none" chart="none" />
+        </opaf:instruction>
+        <opaf:instruction name="Chart Uniqque Instruction Test" >
+            <opaf:action name="text" description="Unique" instruction="unique text instructions" chart="text" />
         </opaf:instruction>
     </opaf:component>
 
