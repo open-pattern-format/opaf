@@ -176,6 +176,160 @@
         </opaf:row>
     </opaf:define_chart>
 
+    <opaf:define_chart name="lifted_increase">
+        <opaf:row type="rs">
+            <opaf:action name="lifted_increase" />
+            <opaf:action name="lifted_increase_purl" count="2" />
+        </opaf:row>
+        <opaf:row type="ws">
+            <opaf:action name="lifted_increase" count="2" />
+            <opaf:action name="lifted_increase_purl" />
+        </opaf:row>
+        <opaf:row type="round">
+            <opaf:action name="lifted_increase" />
+            <opaf:action name="lifted_increase_purl" />
+        </opaf:row>
+    </opaf:define_chart>
+
+    <opaf:define_chart name="knit_purl_together">
+        <opaf:row type="rs">
+            <opaf:action name="knit_together" />
+            <opaf:action name="knit_together" tbl="true"/>
+            <opaf:action name="knit_together" stitches="3" />
+            <opaf:action name="knit_together" stitches="3" tbl="true"/>
+            <opaf:action name="knit_together" stitches="4" />
+            <opaf:action name="knit_together" stitches="4" tbl="true"/>
+            <opaf:action name="knit_together" stitches="5" />
+            <opaf:action name="knit_together" stitches="5" tbl="true"/>
+            <opaf:action name="knit_together" stitches="6" />
+            <opaf:action name="knit_together" stitches="6" tbl="true"/>
+            <opaf:action name="knit_together" stitches="7" />
+            <opaf:action name="knit_together" stitches="7" tbl="true"/>
+            <opaf:action name="knit_together" stitches="8" />
+            <opaf:action name="knit_together" stitches="8" tbl="true"/>
+            <opaf:action name="knit_together" stitches="9" />
+            <opaf:action name="knit_together" stitches="9" tbl="true"/>
+            <opaf:action name="purl_together" />
+            <opaf:action name="purl_together" tbl="true"/>
+            <opaf:action name="purl_together" stitches="3" />
+            <opaf:action name="purl_together" stitches="3" tbl="true"/>
+            <opaf:action name="purl_together" stitches="4" />
+            <opaf:action name="purl_together" stitches="4" tbl="true"/>
+            <opaf:action name="purl_together" stitches="5" />
+            <opaf:action name="purl_together" stitches="5" tbl="true"/>
+            <opaf:action name="purl_together" stitches="6" />
+            <opaf:action name="purl_together" stitches="6" tbl="true"/>
+            <opaf:action name="purl_together" stitches="7" />
+            <opaf:action name="purl_together" stitches="7" tbl="true"/>
+            <opaf:action name="purl_together" stitches="8" />
+            <opaf:action name="purl_together" stitches="8" tbl="true"/>
+            <opaf:action name="purl_together" stitches="9" />
+            <opaf:action name="purl_together" stitches="9" tbl="true"/>
+        </opaf:row>
+        <opaf:row type="ws">
+            <opaf:action name="knit_together" />
+            <opaf:action name="knit_together" tbl="true"/>
+            <opaf:action name="knit_together" stitches="3" />
+            <opaf:action name="knit_together" stitches="3" tbl="true"/>
+            <opaf:action name="knit_together" stitches="4" />
+            <opaf:action name="knit_together" stitches="4" tbl="true"/>
+            <opaf:action name="knit_together" stitches="5" />
+            <opaf:action name="knit_together" stitches="5" tbl="true"/>
+            <opaf:action name="knit_together" stitches="6" />
+            <opaf:action name="knit_together" stitches="6" tbl="true"/>
+            <opaf:action name="knit_together" stitches="7" />
+            <opaf:action name="knit_together" stitches="7" tbl="true"/>
+            <opaf:action name="knit_together" stitches="8" />
+            <opaf:action name="knit_together" stitches="8" tbl="true"/>
+            <opaf:action name="knit_together" stitches="9" />
+            <opaf:action name="knit_together" stitches="9" tbl="true"/>
+            <opaf:action name="purl_together" />
+            <opaf:action name="purl_together" tbl="true"/>
+            <opaf:action name="purl_together" stitches="3" />
+            <opaf:action name="purl_together" stitches="3" tbl="true"/>
+            <opaf:action name="purl_together" stitches="4" />
+            <opaf:action name="purl_together" stitches="4" tbl="true"/>
+            <opaf:action name="purl_together" stitches="5" />
+            <opaf:action name="purl_together" stitches="5" tbl="true"/>
+            <opaf:action name="purl_together" stitches="6" />
+            <opaf:action name="purl_together" stitches="6" tbl="true"/>
+            <opaf:action name="purl_together" stitches="7" />
+            <opaf:action name="purl_together" stitches="7" tbl="true"/>
+            <opaf:action name="purl_together" stitches="8" />
+            <opaf:action name="purl_together" stitches="8" tbl="true"/>
+            <opaf:action name="purl_together" stitches="9" />
+            <opaf:action name="purl_together" stitches="9" tbl="true"/>
+        </opaf:row>
+        <opaf:row type="round">
+            <opaf:action name="knit_together" />
+            <opaf:action name="knit_together" tbl="true"/>
+            <opaf:action name="knit_together" stitches="3" />
+            <opaf:action name="knit_together" stitches="3" tbl="true"/>
+            <opaf:action name="knit_together" stitches="4" />
+            <opaf:action name="knit_together" stitches="4" tbl="true"/>
+            <opaf:action name="knit_together" stitches="5" />
+            <opaf:action name="knit_together" stitches="5" tbl="true"/>
+            <opaf:action name="knit_together" stitches="6" />
+            <opaf:action name="knit_together" stitches="6" tbl="true"/>
+            <opaf:action name="knit_together" stitches="7" />
+            <opaf:action name="knit_together" stitches="7" tbl="true"/>
+            <opaf:action name="knit_together" stitches="8" />
+            <opaf:action name="knit_together" stitches="8" tbl="true"/>
+            <opaf:action name="knit_together" stitches="9" />
+            <opaf:action name="knit_together" stitches="9" tbl="true"/>
+            <opaf:action name="purl_together" />
+            <opaf:action name="purl_together" tbl="true"/>
+            <opaf:action name="purl_together" stitches="3" />
+            <opaf:action name="purl_together" stitches="3" tbl="true"/>
+            <opaf:action name="purl_together" stitches="4" />
+            <opaf:action name="purl_together" stitches="4" tbl="true"/>
+            <opaf:action name="purl_together" stitches="5" />
+            <opaf:action name="purl_together" stitches="5" tbl="true"/>
+            <opaf:action name="purl_together" stitches="6" />
+            <opaf:action name="purl_together" stitches="6" tbl="true"/>
+            <opaf:action name="purl_together" stitches="7" />
+            <opaf:action name="purl_together" stitches="7" tbl="true"/>
+            <opaf:action name="purl_together" stitches="8" />
+            <opaf:action name="purl_together" stitches="8" tbl="true"/>
+            <opaf:action name="purl_together" stitches="9" />
+            <opaf:action name="purl_together" stitches="9" tbl="true"/>
+        </opaf:row>
+        <opaf:row type="round">
+            <opaf:action name="knit_together" count="2" />
+            <opaf:action name="knit_together" count="2" tbl="true"/>
+            <opaf:action name="knit_together" count="2" stitches="3" />
+            <opaf:action name="knit_together" count="2" stitches="3" tbl="true"/>
+            <opaf:action name="knit_together" count="2" stitches="4" />
+            <opaf:action name="knit_together" count="2" stitches="4" tbl="true"/>
+            <opaf:action name="knit_together" count="2" stitches="5" />
+            <opaf:action name="knit_together" count="2" stitches="5" tbl="true"/>
+            <opaf:action name="knit_together" count="2" stitches="6" />
+            <opaf:action name="knit_together" count="2" stitches="6" tbl="true"/>
+            <opaf:action name="knit_together" count="2" stitches="7" />
+            <opaf:action name="knit_together" count="2" stitches="7" tbl="true"/>
+            <opaf:action name="knit_together" count="2" stitches="8" />
+            <opaf:action name="knit_together" count="2" stitches="8" tbl="true"/>
+            <opaf:action name="knit_together" count="2" stitches="9" />
+            <opaf:action name="knit_together" count="2" stitches="9" tbl="true"/>
+            <opaf:action name="purl_together" count="2" />
+            <opaf:action name="purl_together" count="2" tbl="true"/>
+            <opaf:action name="purl_together" count="2" stitches="3" />
+            <opaf:action name="purl_together" count="2" stitches="3" tbl="true"/>
+            <opaf:action name="purl_together" count="2" stitches="4" />
+            <opaf:action name="purl_together" count="2" stitches="4" tbl="true"/>
+            <opaf:action name="purl_together" count="2" stitches="5" />
+            <opaf:action name="purl_together" count="2" stitches="5" tbl="true"/>
+            <opaf:action name="purl_together" count="2" stitches="6" />
+            <opaf:action name="purl_together" count="2" stitches="6" tbl="true"/>
+            <opaf:action name="purl_together" count="2" stitches="7" />
+            <opaf:action name="purl_together" count="2" stitches="7" tbl="true"/>
+            <opaf:action name="purl_together" count="2" stitches="8" />
+            <opaf:action name="purl_together" count="2" stitches="8" tbl="true"/>
+            <opaf:action name="purl_together" count="2" stitches="9" />
+            <opaf:action name="purl_together" count="2" stitches="9" tbl="true"/>
+        </opaf:row>
+    </opaf:define_chart>
+
     <opaf:define_block name="action_text">
         <opaf:action name="text" instruction="text with a separator" description="Text with a separator" />
         <opaf:action name="text" instruction="text with no separator" description="Text with no separator" attrs="nosep" />
@@ -203,7 +357,7 @@
     </opaf:define_block>
 
     <opaf:define_block name="action_knit_together">
-        <opaf:action name="knit_together" />
+        <opaf:action name="knit_together" chart="knit_purl_together" />
         <opaf:action name="knit_together" count="0" stitches="5" tbl="false"/>
         <opaf:action name="knit_together" count="0" tbl="true"/>
         <opaf:action name="knit_together" count="1" tbl="false"/>
@@ -213,7 +367,7 @@
     </opaf:define_block>
 
     <opaf:define_block name="action_purl_together">
-        <opaf:action name="purl_together" />
+        <opaf:action name="purl_together" chart="knit_purl_together" />
         <opaf:action name="purl_together" count="0" stitches="5" tbl="false"/>
         <opaf:action name="purl_together" count="0" tbl="true"/>
         <opaf:action name="purl_together" count="1" tbl="false"/>
@@ -247,7 +401,7 @@
     </opaf:define_block>
 
     <opaf:define_block name="action_lifted_increase">
-        <opaf:action name="lifted_increase" />
+        <opaf:action name="lifted_increase" chart="lifted_increase" />
         <opaf:action name="lifted_increase" count="2" />
         <opaf:action name="lifted_increase" type="right" />
         <opaf:action name="lifted_increase" count="2" type="right" />
