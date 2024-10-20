@@ -233,7 +233,7 @@
         Special action used only for charting
     -->
     <opaf:define_action name="none" params="count=1">
-        <action name="none" description="no stitch" instruction="" count="${count}" image_ws="none" image_rs="none" attrs="chart" total="${count}" />
+        <action name="none" description="no stitch" instruction="" count="${count}" attrs="chart" total="${count}" />
     </opaf:define_action>
 
 </actions>
