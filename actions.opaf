@@ -118,9 +118,9 @@
         </type>
     -->
     <opaf:define_action name="make_one" params="color=main type=preferred">
-        <action name="m1" description="make 1 knitwise" instruction="m1" type="${type}" count="1" color="${color}" image_ws="m1" image_rs="m1" total="1" condition="${EQ(type, 'preferred')}" />
-        <action name="m1l" description="make 1 left knitwise" instruction="m1l" type="${type}" count="1" color="${color}" image_ws="m1l" image_rs="m1l" total="1" condition="${EQ(type, 'left')}" />
-        <action name="m1r" description="make 1 right knitwise" instruction="m1r" type="${type}" count="1" color="${color}" image_ws="m1r" image_rs="m1r" total="1" condition="${EQ(type, 'right')}" />
+        <action name="m1" description="make 1 knitwise" instruction="m1" type="${type}" count="1" color="${color}" image_ws="m1p" image_rs="m1" total="1" condition="${EQ(type, 'preferred')}" />
+        <action name="m1l" description="make 1 left knitwise" instruction="m1l" type="${type}" count="1" color="${color}" image_ws="m1pl" image_rs="m1l" total="1" condition="${EQ(type, 'left')}" />
+        <action name="m1r" description="make 1 right knitwise" instruction="m1r" type="${type}" count="1" color="${color}" image_ws="m1pr" image_rs="m1r" total="1" condition="${EQ(type, 'right')}" />
     </opaf:define_action>
 
     <!-- Make One Purl
@@ -131,9 +131,9 @@
         </type>
     -->
     <opaf:define_action name="make_one_purl" params="color=main type=preferred">
-        <action name="m1p" description="make 1 purlwise" instruction="m1p" type="${type}" count="1" color="${color}" total="1" condition="${EQ(type, 'preferred')}" />
-        <action name="m1lp" description="make 1 left purlwise" instruction="m1lp" type="${type}" count="1" color="${color}" total="1" condition="${EQ(type, 'left')}" />
-        <action name="m1rp" description="make 1 right purlwise" instruction="m1rp" type="${type}" count="1" color="${color}" total="1" condition="${EQ(type, 'right')}" />
+        <action name="m1p" description="make 1 purlwise" instruction="m1p" type="${type}" count="1" color="${color}" image_ws="m1" image_rs="m1p" total="1" condition="${EQ(type, 'preferred')}" />
+        <action name="m1pl" description="make 1 left purlwise" instruction="m1pl" type="${type}" count="1" color="${color}" image_ws="m1l" image_rs="m1pl" total="1" condition="${EQ(type, 'left')}" />
+        <action name="m1pr" description="make 1 right purlwise" instruction="m1pr" type="${type}" count="1" color="${color}" image_ws="m1r" image_rs="m1pr" total="1" condition="${EQ(type, 'right')}" />
     </opaf:define_action>
 
     <opaf:define_action name="yarn_over" params="count=1 color=main">
@@ -142,13 +142,13 @@
     </opaf:define_action>
 
     <opaf:define_action name="knit_front_back" params="count=1 color=main">
-        <action name="kfb" description="knit front back" instruction="kfb" count="${count}" color="${color}" total="${count * 2}" condition="${LT(count, 2)}" />
-        <action name="kfb" description="knit front back" instruction="kfb ${count} times" count="${count}" color="${color}" total="${count * 2}" condition="${GT(count, 1)}" />
+        <action name="kfb" description="knit front back" instruction="kfb" count="${count}" color="${color}" image_ws="pfb" image_rs="kfb" total="${count * 2}" condition="${LT(count, 2)}" />
+        <action name="kfb" description="knit front back" instruction="kfb ${count} times" count="${count}" color="${color}" image_ws="pfb" image_rs="kfb" total="${count * 2}" condition="${GT(count, 1)}" />
     </opaf:define_action>
 
     <opaf:define_action name="purl_front_back" params="count=1 color=main">
-        <action name="pfb" description="purl front back" instruction="pfb" count="${count}" color="${color}" total="${count * 2}" condition="${LT(count, 2)}" />
-        <action name="pfb" description="purl front back" instruction="pfb ${count} times" count="${count}" color="${color}" total="${count * 2}" condition="${GT(count, 1)}" />
+        <action name="pfb" description="purl front back" instruction="pfb" count="${count}" color="${color}" image_ws="kfb" image_rs="pfb" total="${count * 2}" condition="${LT(count, 2)}" />
+        <action name="pfb" description="purl front back" instruction="pfb ${count} times" count="${count}" color="${color}" image_ws="kfb" image_rs="pfb" total="${count * 2}" condition="${GT(count, 1)}" />
     </opaf:define_action>
 
     <opaf:define_action name="knit_front_back_front" params="count=1 color=main">
