@@ -49,8 +49,8 @@
     </opaf:define_action>
 
     <opaf:define_action name="knit_together" params="stitches=2 count=1 color=main tbl=false">
-        <action name="k${stitches}tog${IF(BOOL(tbl), ' tbl', '')}" description="knit ${stitches} together${IF(BOOL(tbl), ' through back loop', '')}" instruction="k${stitches}tog${IF(BOOL(tbl), ' tbl', '')}" stitches="${stitches}" count="${count}" color="${color}" tbl="${tbl}" total="${count}" condition="${LT(count, 2)}" />
-        <action name="k${stitches}tog${IF(BOOL(tbl), ' tbl', '')}" description="knit ${stitches} together${IF(BOOL(tbl), ' through back loop', '')}" instruction="k${stitches}tog${IF(BOOL(tbl), ' tbl', '')} ${count} times" stitches="${stitches}" count="${count}" color="${color}" tbl="${tbl}" total="${count}" condition="${GT(count, 1)}" />
+        <action name="k${stitches}tog${IF(BOOL(tbl), ' tbl', '')}" description="knit ${stitches} together${IF(BOOL(tbl), ' through back loop', '')}" instruction="k${stitches}tog${IF(BOOL(tbl), ' tbl', '')}" stitches="${stitches}" count="${count}" color="${color}" tbl="${tbl}" image_ws="p${stitches}tog${IF(BOOL(tbl), ' tbl', '')}" image_rs="k${stitches}tog${IF(BOOL(tbl), '_tbl', '')}" total="${count}" condition="${LT(count, 2)}" />
+        <action name="k${stitches}tog${IF(BOOL(tbl), ' tbl', '')}" description="knit ${stitches} together${IF(BOOL(tbl), ' through back loop', '')}" instruction="k${stitches}tog${IF(BOOL(tbl), ' tbl', '')} ${count} times" stitches="${stitches}" count="${count}" color="${color}" tbl="${tbl}" image_ws="p${stitches}tog${IF(BOOL(tbl), ' tbl', '')}" image_rs="k${stitches}tog${IF(BOOL(tbl), '_tbl', '')}" total="${count}" condition="${GT(count, 1)}" />
     </opaf:define_action>
 
     <opaf:define_action name="purl_together" params="stitches=2 count=1 color=main tbl=false">
@@ -63,13 +63,13 @@
     </opaf:define_action>
 
     <opaf:define_action name="slip_knit" params="stitches=2 count=1 color=main">
-        <action name="${REPT('s', stitches, '')}k" description="${REPT('slip', stitches, ' ')} knit" instruction="${REPT('s', stitches, '')}k" stitches="${stitches}" count="${count}" color="${color}" total="${count}" condition="${LT(count, 2)}" />
-        <action name="${REPT('s', stitches, '')}k" description="${REPT('slip', stitches, ' ')} knit" instruction="${REPT('s', stitches, '')}k ${count} times" stitches="${stitches}" count="${count}" color="${color}" total="${count}" condition="${GT(count,1)}" />
+        <action name="${REPT('s', stitches, '')}k" description="${REPT('slip', stitches, ' ')} knit" instruction="${REPT('s', stitches, '')}k" stitches="${stitches}" count="${count}" color="${color}" image_rs="${REPT('s', stitches, '')}k" image_ws="${REPT('s', stitches, '')}p" total="${count}" condition="${LT(count, 2)}" />
+        <action name="${REPT('s', stitches, '')}k" description="${REPT('slip', stitches, ' ')} knit" instruction="${REPT('s', stitches, '')}k ${count} times" stitches="${stitches}" count="${count}" color="${color}" image_rs="${REPT('s', stitches, '')}k" image_ws="${REPT('s', stitches, '')}p" total="${count}" condition="${GT(count,1)}" />
     </opaf:define_action>
 
     <opaf:define_action name="slip_purl" params="stitches=2 count=1 color=main">
-        <action name="${REPT('s', stitches, '')}p" description="${REPT('slip', stitches, ' ')} purl" instruction="${REPT('s', stitches, '')}p" stitches="${stitches}" count="${count}" color="${color}" total="${count}" condition="${LT(count, 2)}" />
-        <action name="${REPT('s', stitches, '')}p" description="${REPT('slip', stitches, ' ')} purl" instruction="${REPT('s', stitches, '')}p ${count} times" stitches="${stitches}" count="${count}" color="${color}" total="${count}" condition="${GT(count, 1)}" />
+        <action name="${REPT('s', stitches, '')}p" description="${REPT('slip', stitches, ' ')} purl" instruction="${REPT('s', stitches, '')}p" stitches="${stitches}" count="${count}" color="${color}" image_rs="${REPT('s', stitches, '')}p" image_ws="${REPT('s', stitches, '')}k" total="${count}" condition="${LT(count, 2)}" />
+        <action name="${REPT('s', stitches, '')}p" description="${REPT('slip', stitches, ' ')} purl" instruction="${REPT('s', stitches, '')}p ${count} times" stitches="${stitches}" count="${count}" color="${color}" image_rs="${REPT('s', stitches, '')}p" image_ws="${REPT('s', stitches, '')}k" total="${count}" condition="${GT(count, 1)}" />
     </opaf:define_action>
 
     <opaf:define_action name="double_stitch" params="color=main">
@@ -152,13 +152,13 @@
     </opaf:define_action>
 
     <opaf:define_action name="knit_front_back_front" params="count=1 color=main">
-        <action name="kfbf" description="knit front back front" instruction="kfbf" count="${count}" color="${color}" total="${count * 3}" condition="${LT(count, 2)}" />
-        <action name="kfbf" description="knit front back front" instruction="kfbf ${count} times" count="${count}" color="${color}" total="${count * 3}" condition="${GT(count, 1)}" />
+        <action name="kfbf" description="knit front back front" instruction="kfbf" count="${count}" color="${color}" image_ws="pfbf" image_rs="kfbf" total="${count * 3}" condition="${LT(count, 2)}" />
+        <action name="kfbf" description="knit front back front" instruction="kfbf ${count} times" count="${count}" color="${color}" image_ws="pfbf" image_rs="kfbf" total="${count * 3}" condition="${GT(count, 1)}" />
     </opaf:define_action>
 
     <opaf:define_action name="purl_front_back_front" params="count=1 color=main">
-        <action name="pfbf" description="purl front back front" instruction="pfbf" count="${count}" color="${color}" total="${count * 3}" condition="${LT(count, 2)}" />
-        <action name="pfbf" description="purl front back front" instruction="pfbf ${count} times" count="${count}" color="${color}" total="${count * 3}" condition="${GT(count, 1)}" />
+        <action name="pfbf" description="purl front back front" instruction="pfbf" count="${count}" color="${color}" image_ws="kfbf" image_rs="pfbf" total="${count * 3}" condition="${LT(count, 2)}" />
+        <action name="pfbf" description="purl front back front" instruction="pfbf ${count} times" count="${count}" color="${color}" image_ws="kfbf" image_rs="pfbf" total="${count * 3}" condition="${GT(count, 1)}" />
     </opaf:define_action>
 
     <!-- Lifted Increase
@@ -168,18 +168,18 @@
         </type>
     -->
     <opaf:define_action name="lifted_increase" params="count=1 color=main type=left">
-        <action name="${IF(EQ(type, 'left'), 'lli', 'rli')}" description="${type} lifted increase" instruction="${IF(EQ(type, 'left'), 'lli', 'rli')}" count="${count}" color="${color}" total="${count * 2}" condition="${LT(count, 2)}" />
-        <action name="${IF(EQ(type, 'left'), 'lli', 'rli')}" description="${type} lifted increase" instruction="${IF(EQ(type, 'left'), 'lli', 'rli')} ${count} times" count="${count}" color="${color}" total="${count * 2}" condition="${GT(count, 1)}" />
+        <action name="${IF(EQ(type, 'left'), 'lli', 'rli')}" description="${type} lifted increase" instruction="${IF(EQ(type, 'left'), 'lli', 'rli')}" count="${count}" color="${color}" image_rs="${IF(EQ(type, 'left'), 'lli', 'rli')}" image_ws="${IF(EQ(type, 'left'), 'llip', 'rlip')}" total="${count * 2}" condition="${LT(count, 2)}" />
+        <action name="${IF(EQ(type, 'left'), 'lli', 'rli')}" description="${type} lifted increase" instruction="${IF(EQ(type, 'left'), 'lli', 'rli')} ${count} times" count="${count}" color="${color}" image_rs="${IF(EQ(type, 'left'), 'lli', 'rli')}" image_ws="${IF(EQ(type, 'left'), 'llip', 'rlip')}" total="${count * 2}" condition="${GT(count, 1)}" />
     </opaf:define_action>
 
     <opaf:define_action name="central_double_decrease" params="count=1 color=main">
-        <action name="cdd" description="slip 2 stitches together, knit 1, pass slipped stitches over" instruction="cdd" total="${count}" color="${color}" image_ws="cdd" image_rs="cdd" count="${count}" condition="${LT(count, 2)}" />
-        <action name="cdd" description="slip 2 stitches together, knit 1, pass slipped stitches over" instruction="cdd ${count} times" total="${count}" color="${color}" image_ws="cdd" image_rs="cdd" count="${count}" condition="${GT(count, 1)}" />
+        <action name="cdd" description="slip 2 stitches together, knit 1, pass slipped stitches over" instruction="cdd" total="${count}" color="${color}" image_ws="cddp" image_rs="cdd" count="${count}" condition="${LT(count, 2)}" />
+        <action name="cdd" description="slip 2 stitches together, knit 1, pass slipped stitches over" instruction="cdd ${count} times" total="${count}" color="${color}" image_ws="cddp" image_rs="cdd" count="${count}" condition="${GT(count, 1)}" />
     </opaf:define_action>
 
     <opaf:define_action name="central_double_decrease_purl" params="count=1 color=main">
-        <action name="cddp" description="slip 2 stitches together, purl 1, pass slipped stitches over" instruction="cddp" total="${count}" color="${color}" image_ws="cddp" image_rs="cddp" count="${count}" condition="${LT(count, 2)}" />
-        <action name="cddp" description="slip 2 stitches together, purl 1, pass slipped stitches over" instruction="cddp ${count} times" total="${count}" color="${color}" image_ws="cddp" image_rs="cddp" count="${count}" condition="${GT(count, 1)}" />
+        <action name="cddp" description="slip 2 stitches together, purl 1, pass slipped stitches over" instruction="cddp" total="${count}" color="${color}" image_ws="cdd" image_rs="cddp" count="${count}" condition="${LT(count, 2)}" />
+        <action name="cddp" description="slip 2 stitches together, purl 1, pass slipped stitches over" instruction="cddp ${count} times" total="${count}" color="${color}" image_ws="cdd" image_rs="cddp" count="${count}" condition="${GT(count, 1)}" />
     </opaf:define_action>
 
     <!--
