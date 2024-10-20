@@ -172,6 +172,17 @@
         <action name="${IF(EQ(type, 'left'), 'lli', 'rli')}" description="${type} lifted increase" instruction="${IF(EQ(type, 'left'), 'lli', 'rli')} ${count} times" count="${count}" color="${color}" image_rs="${IF(EQ(type, 'left'), 'lli', 'rli')}" image_ws="${IF(EQ(type, 'left'), 'llip', 'rlip')}" total="${count * 2}" condition="${GT(count, 1)}" />
     </opaf:define_action>
 
+    <!-- Lifted Increase Purl
+        <type>
+            left
+            right
+        </type>
+    -->
+    <opaf:define_action name="lifted_increase_purl" params="count=1 color=main type=left">
+        <action name="${IF(EQ(type, 'left'), 'llip', 'rlip')}" description="${type} lifted increase purl" instruction="${IF(EQ(type, 'left'), 'llip', 'rlip')}" count="${count}" color="${color}" image_rs="${IF(EQ(type, 'left'), 'llip', 'rlip')}" image_ws="${IF(EQ(type, 'left'), 'lli', 'rli')}" total="${count * 2}" condition="${LT(count, 2)}" />
+        <action name="${IF(EQ(type, 'left'), 'llip', 'rlip')}" description="${type} lifted increase purl" instruction="${IF(EQ(type, 'left'), 'llip', 'rlip')} ${count} times" count="${count}" color="${color}" image_rs="${IF(EQ(type, 'left'), 'llip', 'rlip')}" image_ws="${IF(EQ(type, 'left'), 'lli', 'rli')}" total="${count * 2}" condition="${GT(count, 1)}" />
+    </opaf:define_action>
+
     <opaf:define_action name="central_double_decrease" params="count=1 color=main">
         <action name="cdd" description="slip 2 stitches together, knit 1, pass slipped stitches over" instruction="cdd" total="${count}" color="${color}" image_ws="cddp" image_rs="cdd" count="${count}" condition="${LT(count, 2)}" />
         <action name="cdd" description="slip 2 stitches together, knit 1, pass slipped stitches over" instruction="cdd ${count} times" total="${count}" color="${color}" image_ws="cddp" image_rs="cdd" count="${count}" condition="${GT(count, 1)}" />
