@@ -3,7 +3,7 @@
     <opaf:metadata>
         <title>Test Pattern</title>
         <copyright>Scott Ware</copyright>
-        <description>Test pattern for *Open Pattern Format* libraries</description>
+        <description>Test pattern for *‘Open Pattern Format’* libraries</description>
         <published>2023</published>
         <tag>OPAF</tag>
         <tag>Test</tag>
@@ -611,6 +611,11 @@
         <opaf:text data="## H2 Test"/>
         <opaf:text data="## H3 Test"/>
         <opaf:text data="Normal text with some **bold** text and some *italic* text."/>
+        <opaf:text data=" > This is a block quote" />
+        <opaf:text data="ÀÁÂÃĂÄĀÅÆĆČÇÈÉÊĔËĒÌÍÎĬÏÐŁÑÒÓÔÕÖŐØŠÙÚÛÜŰÝÞßàáâãăäāåæćčçèéêĕëēìíîĭïðłñòóôõöőøšùúûüűýÿþɪ–—⋯•¶†✓“”’¿©€£µÅℏ♂♃♪♮♣αβθϑϕωΔΨΩϠ现代汉语通用字表" />
+        <opaf:instruction name="Special Character Test" >
+            <opaf:action name="text" description="ÀÁÂÃĂÄĀÅÆĆČÇÈÉÊĔËĒÌÍÎĬÏÐŁÑÒÓÔÕÖŐØŠÙÚÛÜŰÝÞßàáâãăäāåæćčçèéêĕëēìíîĭïðłñòóôõöőøšùúûüűýÿþɪ–—⋯•¶†✓“”’¿©€£µÅℏ♂♃♪♮♣αβθϑϕωΔΨΩϠ现代汉语通用字表" instruction="ÀÁÂÃĂÄĀÅÆĆČÇÈÉÊĔËĒÌÍÎĬÏÐŁÑÒÓÔÕÖŐØŠÙÚÛÜŰÝÞßàáâãăäāåæćčçèéêĕëēìíîĭïðłñòóôõöőøšùúûüűýÿþɪ–—⋯•¶†✓“”’¿©€£µÅℏ♂♃♪♮♣αβθϑϕωΔΨΩϠ现代汉语通用字表" />
+        </opaf:instruction>
     </opaf:component>
 
     <opaf:component name="Chart Tests" unique_id="8d159515-5a2c-4c65-8f86-7455a8cdb7ef">
