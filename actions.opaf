@@ -193,6 +193,10 @@
         <action name="cddp" description="slip 2 stitches together, purl 1, pass slipped stitches over" instruction="cddp ${count} times" total="${count}" color="${color}" image_ws="cdd" image_rs="cddp" count="${count}" condition="${GT(count, 1)}" />
     </opaf:define_action>
 
+    <opaf:define_action name="wrap_and_turn" params="color=main">
+        <action name="wt" description="wrap and turn" instruction="w&amp;t" count="1" color="${color}" total="1" />
+    </opaf:define_action>
+
     <!--
         Text only instructions
     -->

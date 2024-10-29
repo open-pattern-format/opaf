@@ -441,6 +441,18 @@
         <opaf:action name="central_double_decrease_purl" count="4" />
     </opaf:define_block>
 
+    <opaf:define_block name="double_stitch_test">
+        <opaf:action name="double_stitch" />
+        <opaf:action name="knit_double_stitch" />
+        <opaf:action name="knit_double_stitch" count="4" />
+        <opaf:action name="purl_double_stitch" />
+        <opaf:action name="purl_double_stitch" count="4" />
+    </opaf:define_block>
+
+    <opaf:define_block name="wrap_turn_test">
+        <opaf:action name="wrap_and_turn" />
+    </opaf:define_block>
+
     <opaf:component name="Action Tests" unique_id="ad8d893f-3fcf-4cfa-87e4-b22609169f03">
         <opaf:instruction name="Knit">
             <opaf:block name="action_knit" />
@@ -484,6 +496,12 @@
         <opaf:instruction name="Central Double Decrease">
             <opaf:block name="central_double_decrease_action_test"/>
             <opaf:block name="central_double_decrease_purl_action_test"/>
+        </opaf:instruction>
+        <opaf:instruction name="Double Stitch">
+            <opaf:block name="double_stitch_test"/>
+        </opaf:instruction>
+        <opaf:instruction name="Wrap &amp; Turn">
+            <opaf:block name="wrap_turn_test"/>
         </opaf:instruction>
     </opaf:component>
 
