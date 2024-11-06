@@ -194,7 +194,7 @@
     </opaf:define_action>
 
     <opaf:define_action name="wrap_and_turn" params="color=main">
-        <action name="wt" description="wrap and turn" instruction="w&amp;t" count="1" color="${color}" total="1" />
+        <action name="w&amp;t" description="wrap and turn" instruction="w&amp;t" count="1" color="${color}" total="1" />
     </opaf:define_action>
 
     <!--
