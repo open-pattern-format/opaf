@@ -87,7 +87,7 @@
     </opaf:define_action>
 
     <opaf:define_action name="cast_on" params="count=1 color=main type=preferred">
-        <action name="CO" description="cast on" instruction="CO ${count} using ${type} method" count="${count}" color="${color}" type="${type}" total="${count}" />
+        <action name="CO" description="cast on stitches using ${type} method" instruction="CO ${count} sts using ${type} method" count="${count}" color="${color}" type="${type}" total="${count}" />
     </opaf:define_action>
 
     <opaf:define_action name="pick_up" params="count=1 color=main">
