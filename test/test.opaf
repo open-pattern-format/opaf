@@ -453,6 +453,28 @@
         <opaf:action name="wrap_and_turn" />
     </opaf:define_block>
 
+    <opaf:define_block name="left_cable_test">
+        <opaf:action name="left_cable" />
+        <opaf:action name="left_cable" left="2" right="3" count="3" />
+        <opaf:action name="left_purl_cable" />
+        <opaf:action name="left_purl_cable" left="2" right="3" count="3" />
+        <opaf:action name="left_cross_cable" />
+        <opaf:action name="left_cross_cable" left="2" center="1" right="3" count="3" />
+        <opaf:action name="left_purl_cross_cable" />
+        <opaf:action name="left_purl_cross_cable" left="2" center="1" right="3" count="3" />
+    </opaf:define_block>
+
+    <opaf:define_block name="right_cable_test">
+        <opaf:action name="right_cable" />
+        <opaf:action name="right_cable" left="2" right="3" count="3" />
+        <opaf:action name="right_purl_cable" />
+        <opaf:action name="right_purl_cable" left="2" right="3" count="3" />
+        <opaf:action name="right_cross_cable" />
+        <opaf:action name="right_cross_cable" left="2" center="1" right="3" count="3" />
+        <opaf:action name="right_purl_cross_cable" />
+        <opaf:action name="right_purl_cross_cable" left="2" center="1" right="3" count="3" />
+    </opaf:define_block>
+
     <opaf:component name="Action Tests" unique_id="ad8d893f-3fcf-4cfa-87e4-b22609169f03">
         <opaf:instruction name="Knit">
             <opaf:block name="action_knit" />
@@ -502,6 +524,12 @@
         </opaf:instruction>
         <opaf:instruction name="Wrap &amp; Turn">
             <opaf:block name="wrap_turn_test"/>
+        </opaf:instruction>
+        <opaf:instruction name="Left Cable">
+            <opaf:block name="left_cable_test"/>
+        </opaf:instruction>
+        <opaf:instruction name="Right Cable">
+            <opaf:block name="right_cable_test"/>
         </opaf:instruction>
     </opaf:component>
 
