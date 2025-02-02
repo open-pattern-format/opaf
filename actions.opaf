@@ -74,8 +74,8 @@
     </opaf:define_action>
 
     <opaf:define_action name="purl_together" params="stitches=2 count=1 color=main tbl=false">
-        <action name="p${stitches}tog${IF(BOOL(tbl), ' tbl', '')}" description="purl ${stitches} together${IF(BOOL(tbl), ' through back loop', '')}" instruction="p${stitches}tog${IF(BOOL(tbl), ' tbl', '')}" stitches="${stitches}" count="${count}" color="${color}" tbl="${tbl}" total="${count}" condition="${LT(count, 2)}" />
-        <action name="p${stitches}tog${IF(BOOL(tbl), ' tbl', '')}" description="purl ${stitches} together${IF(BOOL(tbl), ' through back loop', '')}" instruction="p${stitches}tog${IF(BOOL(tbl), ' tbl', '')} ${count} times" stitches="${stitches}" count="${count}" color="${color}" tbl="${tbl}" total="${count}" condition="${GT(count, 1)}" />
+        <action name="p${stitches}tog${IF(BOOL(tbl), ' tbl', '')}" description="purl ${stitches} together${IF(BOOL(tbl), ' through back loop', '')}" instruction="p${stitches}tog${IF(BOOL(tbl), ' tbl', '')}" stitches="${stitches}" count="${count}" color="${color}" tbl="${tbl}" image_ws="k${stitches}tog${IF(BOOL(tbl), ' tbl', '')}" image_rs="p${stitches}tog${IF(BOOL(tbl), '_tbl', '')}" total="${count}" condition="${LT(count, 2)}" />
+        <action name="p${stitches}tog${IF(BOOL(tbl), ' tbl', '')}" description="purl ${stitches} together${IF(BOOL(tbl), ' through back loop', '')}" instruction="p${stitches}tog${IF(BOOL(tbl), ' tbl', '')} ${count} times" stitches="${stitches}" count="${count}" color="${color}" tbl="${tbl}" image_ws="k${stitches}tog${IF(BOOL(tbl), ' tbl', '')}" image_rs="p${stitches}tog${IF(BOOL(tbl), '_tbl', '')}" total="${count}" condition="${GT(count, 1)}" />
     </opaf:define_action>
 
     <opaf:define_action name="slip" params="count=1 color=main kwise=false wyif=false">
